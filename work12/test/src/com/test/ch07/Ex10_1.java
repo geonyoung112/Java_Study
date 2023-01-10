@@ -4,13 +4,13 @@ public class Ex10_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Movie c1 = new Movie("�뼱踰ㅼ졇�뒪");
+		Movie c1 = new Movie("어벤져스");
 		Movie.printInfo(c1);
 		
-		Movie c2 = new Movie("�뿰�븷�쓽 �삩�룄",180);
+		Movie c2 = new Movie("연애의 온도",180);
 		Movie.printInfo(c2);
 		
-		Movie c3 = new Movie("�븘諛뷀�",180, "�뙋��吏�");
+		Movie c3 = new Movie("아바타",180, "판타지");
 		Movie.printInfo(c3);
 	}
 
@@ -22,11 +22,11 @@ class Movie {
 	String gerne;
 	
 	Movie (String title) {
-		this(title, 100, "�븸�뀡");
+		this(title, 100, "액션");
 	}
 	
 	Movie (String title, int hour) {
-		this(title, hour, "濡쒕㎤�뒪");
+		this(title, hour, "로맨스");
 	}
 	
 	Movie (String title, int hour, String gerne) {
@@ -38,7 +38,7 @@ class Movie {
 	
 	
 	static void printInfo(Movie c) {
-		System.out.printf("�젣紐�: %s%n�긽�쁺�떆媛�: %d%n�옣瑜�: %s%n%n", c.title, c.hour, c.gerne);
+		System.out.printf("제목:  %s%n 가격: %d%n 저자: %s%n%n", c.title, c.hour, c.gerne);
 	}
 }
 /*

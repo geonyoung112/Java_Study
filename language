@@ -1,0 +1,2 @@
+*.javascript linguist-detectable=false
+*.java linguist-detectable=ture

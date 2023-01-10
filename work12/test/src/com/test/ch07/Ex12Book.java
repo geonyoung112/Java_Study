@@ -19,4 +19,8 @@ public class Ex12Book {
 	static void generateBookNo(Ex12Book book) {
 		book.bookNo = (int)(Math.random()*9000)+1000;
 	}
+	
+	static void changep(int price) {
+		price = 
+	}
 }

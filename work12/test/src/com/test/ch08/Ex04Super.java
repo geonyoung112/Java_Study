@@ -43,3 +43,8 @@ class EBook3 extends Book4 {
 		return this.author;
 	}
 }
+
+/*
+문제 1.
+이전 문제에서 만든 클래스에 this와 super를 적용한 뒤 각각의 값을 출력하세요. 
+*/

@@ -21,8 +21,10 @@ class Book3 {
 	}
 	
 	/*
-	 * 
-	 */
+	Book3() {
+		
+	}
+	*/
 }
 
 class EBook2 extends Book3 {
@@ -33,3 +35,8 @@ class EBook2 extends Book3 {
 		this.fontColor = "블랙";
 	}
 }
+/*
+문제 1.
+이전 문제에서 작성한 부모 클래스에 기본 생성자를 없애면 컴파일 에러가 발생합니다. 
+super를 사용하여 컴파일 에러가 나지 않도록 수정하세요. 
+*/

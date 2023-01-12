@@ -25,9 +25,8 @@ public class Ex12Book {
 		return price;
 	}
 	
-	static int generatePrice(Ex12Book book) {
+	static void generatePrice(Ex12Book book) {
 		book.price = 5000;
-		return book.price;
 	}
 	
 }

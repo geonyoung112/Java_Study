@@ -11,7 +11,10 @@ public class Ex14CallByReference {
 		Ex12Book.generateBookNo(book);
 		
 		System.out.println("책 번호: " +book.bookNo);
-
+		
+		Ex12Book.generatePrice(book);
+		
+		System.out.println("책 가격: " +book.price);
 	}
 
 }

@@ -20,7 +20,14 @@ public class Ex12Book {
 		book.bookNo = (int)(Math.random()*9000)+1000;
 	}
 	
-	static void changep(int price) {
-		price = 
+	static int generatePrice(int price) {
+		price = 3000;
+		return price;
 	}
+	
+	static int generatePrice(Ex12Book book) {
+		book.price = 5000;
+		return book.price;
+	}
+	
 }

@@ -11,6 +11,10 @@ public class Ex13CallByValue {
 		Ex12Book.generateBookNo(book.bookNo);
 		
 		System.out.println("책 번호: " + book.bookNo);
+		
+		Ex12Book.generatePrice(book.price);
+		
+		System.out.println("책 가격: " + book.price);
 
 	}
 

@@ -33,6 +33,12 @@ class Company {
 	String name;
 	String rank;
 	
+	Company(String name) {
+		
+	}
+	
+
+
 	void putworker(Worker wk) {
 		this.wk = wk;
 	}
@@ -57,31 +63,37 @@ class Company {
 	}
 	
 	
-	/*Company() {
+	Company() {
 		
-	}*/
+	}
 	
 	
 }
 
-
-class Worker extends Company{
+//has 관계에는 extends 작성할 필요없다
+class Worker {
 	String name;
 	int age;
 	String year;
 	int salary;
+	
+	
+	Worker() {
+		super();
+		this.name = "홍윤아";
+	}
 	
 	String print() {
 		return "이름: " + name + " 나이: " + age + " 직급: " + year + " 월급: " + salary;
 	}
 }
 
-class Worker2 extends Company{
-	Worker2() {
-		super.rank = "팀장";
-		this.name = "홍윤아";
-	}
-}
+
+/*
+문제 3_1.
+이전 문제에서 작성한 부모 클래스에 기본 생성자를 없애면 컴파일 에러가 발생합니다. 
+super를 사용하여 컴파일 에러가 나지 않도록 수정하세요. 
+*/
 
 /*
 문제 1.

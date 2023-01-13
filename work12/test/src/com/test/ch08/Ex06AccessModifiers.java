@@ -1,5 +1,6 @@
 package com.test.ch08;
 
+import com.test.ch08.ex06.Book22;
 
 public class Ex06AccessModifiers {
 
@@ -42,9 +43,9 @@ class EBook5 extends Book22 {
 	String fontColor;
 
 	
-	void setEdition(int edition) {
+	/*void setEdition(int edition) {
 		this.edition = edition;
-	}
+	}*/
 	
 	
 	@Override
@@ -59,13 +60,13 @@ class EBook5 extends Book22 {
 }
 
 /*
-문제1. ?
+문제1. 
 setEdition 메소드의 오류를 수정하세요.
 
-문제2. O
+문제2. 
 Book클래스의 title 변수를 private로 수정 후 발생되는 main메소드의 오류를 수정하세요. 
 
-문제3. ?
+문제3. 
 EBook5 클래스의 setPrice 메소드를 오버라이딩 하세요.
 e북은 입력된 가격보다 5000원 낮은 금액으로 price가 설정되어야 합니다.
 setPrice 메소드 내에서 setDollarPrice 메소드를 호출하여 dollarPrice를 설정하세요.

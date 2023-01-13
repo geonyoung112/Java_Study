@@ -1,4 +1,4 @@
-package com.test.ch08;
+package com.test.ch08.ex06;
 
 	public class Book22 {
 		private String title;
@@ -8,7 +8,7 @@ package com.test.ch08;
 		int edition;
 		protected float tax;
 		
-		void setTitle(String title) {
+		public void setTitle(String title) {
 			this.title = title;
 		}
 		

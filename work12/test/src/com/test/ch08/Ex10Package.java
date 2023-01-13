@@ -1,5 +1,7 @@
 package com.test.ch08;
 
+import com.test.ch08.ex06.Book22;
+
 public class Ex10Package {
 
 	public static void main(String[] args) {

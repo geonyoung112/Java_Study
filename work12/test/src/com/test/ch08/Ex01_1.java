@@ -48,6 +48,11 @@ class Coffee extends Cafe {
 	String name;
 	String[] coffeemenu;
 	
+	/*
+	문제 4_1.
+	이전 문제에서 만든 클래스에 this와 super를 적용한 뒤 각각의 값을 출력하세요. 
+	*/
+	
 	void setName(String name) {
 		this.name = name;
 		super.name = name + " 레귤러 사이즈";

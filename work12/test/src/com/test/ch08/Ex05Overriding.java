@@ -39,10 +39,19 @@ class EBook4 extends Book5 {
 	int price;
 	String fontColor;
 	
+	@Override
+	//overriding은 부모와 똑같은 메소드를 자식에게도 똑같이 작성할시 부모의 값은 자식이 덮어쓴다.
+	//overriding 시 부모와 자신의 메소드가 같이 때문에 오타가 나면 새로운 메소드를 작성한 것으로 착각할 수 있다.
+	//그래서 @Override라고 작성해야만 한다.
 	void setPrice(int price) {
 		super.setPrice(price + 10000);
 		this.price = price;
 	}
+	
+	/* 오버라이딩: 
+    부모 클래스로부터 상속받은 메서드의 내용을 변경하는것으로 
+    메서드의 선언부는 부모의 것과 완전히 일치해야함
+      이름, 파라미터, 반환타입 같아야함 */
 	
 	void printPrice() {
 		System.out.println("ebook price: " + price);

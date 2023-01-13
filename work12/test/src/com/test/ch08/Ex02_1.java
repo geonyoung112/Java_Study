@@ -4,13 +4,83 @@ public class Ex02_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Worker w1 = new Worker();
+		w1.name = "주건영";
+		w1.age = 25;
+		w1.year = "신입";
+		w1.salary = 300;
+		
+		Worker w2 = new Worker();
+		w2.name = "홍길동";
+		w2.age = 30;
+		w2.year = "대리";
+		w2.salary = 400;
+		
+		Company com = new Company();
+		com.putworker(com.wk);
+		Company.print(w1);
+		
+		com.putworker(w1, w2);
+		Company.print(com.wks);
+		
 	}
 
 }
 
 class Company {
+	Worker wk;
+	Worker[] wks;
 	String name;
+	String rank;
+	
+	void putworker(Worker wk) {
+		this.wk = wk;
+	}
+	
+	void putworker(Worker... wks) {
+		this.wks = wks;
+	}
+	
+	static void print (Worker wk) {
+		System.out.println("--신입--");
+		System.out.println(wk.print());
+		System.out.println();
+	}
+	
+	static void print(Worker... wks) {
+		System.out.println("--전체--");
+		if (wks != null) {
+			for(int i=0; i<wks.length; i++) {
+				System.out.println(wks[i].print());
+			}
+		}
+	}
+	
+	
+	/*Company() {
+		
+	}*/
+	
+	
+}
+
+
+class Worker extends Company{
+	String name;
+	int age;
+	String year;
+	int salary;
+	
+	String print() {
+		return "이름: " + name + " 나이: " + age + " 직급: " + year + " 월급: " + salary;
+	}
+}
+
+class Worker2 extends Company{
+	Worker2() {
+		super.rank = "팀장";
+		this.name = "홍윤아";
+	}
 }
 
 /*

@@ -15,7 +15,11 @@ public class Ex01_1 {
 		System.out.println("커피 평균 가격(세금포함): " + coffee.getPrice() + "원");
 		String[] menu = {"카페라떼","에스프레소","바닐라라떼"};
 		coffee.coffeemenu = menu;
-		coffee.printcoffee();
+
+		Coffee co = new Coffee();
+		co.setName("커피");
+
+
 		
 		System.out.println();
 		
@@ -41,7 +45,15 @@ class Cafe {
 }
 
 class Coffee extends Cafe {
+	String name;
 	String[] coffeemenu;
+	
+	void setName(String name) {
+		this.name = name;
+		super.name = name + " 레귤러 사이즈";
+		System.out.println(super.name);
+		System.out.println(this.name);
+	}
 	
 	void printcoffee() {
 		System.out.println("----커피메뉴----");

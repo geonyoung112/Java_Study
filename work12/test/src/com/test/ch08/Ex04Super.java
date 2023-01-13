@@ -35,6 +35,8 @@ class EBook3 extends Book4 {
 		System.out.println("e북 가격: " + this.price);
 	}
 	
+	//우선순위: 지역변수>참조변수>부모변수
+	
 	String getTitle() {
 		return title;
 	}

@@ -41,6 +41,7 @@ public class Ex06AccessModifiers {
 }
 class EBook5 extends Book22 {
 	String fontColor;
+	protected int price;
 
 	
 	void setEdition(int edition) {
@@ -65,7 +66,8 @@ class EBook5 extends Book22 {
 	
 	@Override
 	public void setPrice(int price) {
-		price = price - 5000;
+		super.price = price;
+		this.price = price - 5000;
 		setDollarPrice(price);
 	}
 	
@@ -75,7 +77,18 @@ class EBook5 extends Book22 {
 	}
 }
 
+/*
+ * 젒근제어자: 변수와 함수, 클래스에 대한 접근을 제한하는 문법
+ * 접근을 제한하는 이유는 객체가 가진 고유의 멤버 변수값들이 외부에서 잘못 변경되는 것을 막기 위해서입니다. 
+ * 사전에 멤버 변수와 함수들의 성격을 규정하고 차단함으로써 의도치 않은 실수를 줄이기 위한 의도가 깔려 있습니다. 
+ * 
+접근 허용 가능 범위 순서: public > protected > default > private
 
+	1. public : 접근을 제한이 없음
+	2. protected : 동일한 패키지 내에 존재하거나 파생클래스에서만 접근 가능
+	3. default : 아무런 접근 제한자를 명시하지 않으면 default 값이 되며, 동일한 패키지 내에서만 접근이 가능
+	4. private : 자기 자신의 클래스 내에서만 접근이 가능
+ */
 
 	
 /*

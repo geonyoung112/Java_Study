@@ -12,6 +12,11 @@ public class Ex05Overriding {
 		eb.printAlltitle();
 		
 		eb.printAllPrice();
+		
+		System.out.println("---");
+		EBook4 eb2 = new EBook4();
+		eb2.setTitle("어린왕자");
+		eb2.printT();
 	}
 
 }
@@ -35,11 +40,16 @@ class Book5 {
 	void setPrice() {
 		
 	}
+	
+	void setTitle(String title) {
+		this.title = title;
+	}
 }
 
 class EBook4 extends Book5 {
 	int price;
 	String fontColor;
+	String title;
 	
 	@Override
 	//overriding은 부모와 똑같은 메소드를 자식에게도 똑같이 작성할시 부모의 값은 자식이 덮어쓴다.
@@ -74,10 +84,20 @@ class EBook4 extends Book5 {
 		super.printPrice();
 		printPrice();
 	}
+	
+	void setTitle(String title) {
+		super.setTitle(title);
+		this.title = "[이북] " + title;
+	}
+	
+	void printT() {
+		System.out.println(super.title);
+		System.out.println(title);
+	}
 }
 
 /*
-문제 1. ?
+문제 1. o
 제목 설정 메소드를 부모클래스와 자식클래스에 모두 작성하고 자식클래스의 제목 설정 메소드는 제목에 [이북]이 추가되도록 작성하세요.
 부모의 타이틀과 자식의 타이틀 모두 출력하세요. 
 */

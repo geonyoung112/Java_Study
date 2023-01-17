@@ -11,29 +11,30 @@ public class Ex09Final {
 	}
 
 }
-final class Book7 {
+class Book7 {
 	String title;
 	String author;
 	int price;
 	final float tax;
 	//final float tax = 1;
-	
+	//final은 최초선언시 값을 정해서 선언하거나 생성자에서 딱 한 번만 정의 내릴 수 있다.
+	//또한 변수말고 클래스에도 사용할 수 있는데 이는 다른 자식이나 클래스들이 final class에 접근할 수 없다.
 	public Book7() {
 		tax = 1.1f;
 	}
 }
 
-/*
+
  class EBook6 extends Book7 {
  
  }
- */
+
 
 class Book8 {
 	String title;
 	String author;
 	
-	final public void setTitle(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	
@@ -47,11 +48,17 @@ class Book8 {
 class EBook7 extends Book8 {
 	String fontColor;
 	
-	/*
-	 final public void setTitle(String title) {
+
+	 public void setTitle(String title) {
 		this.title = "[E북]" + title;
 	}
+	 
+	/* 
+	 final public String getTitle(String title) {
+			return title;
+		}
 	*/
+		
 }
 
 /*

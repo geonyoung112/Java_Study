@@ -8,6 +8,9 @@ public class Ex05Overriding {
 		eb.setPrice(30000);
 		eb.printPrice();
 		
+		eb.title = "어린왕자";
+		eb.printAlltitle();
+		
 		eb.printAllPrice();
 	}
 
@@ -25,10 +28,9 @@ class Book5 {
 		System.out.println("paperbook price: " + price);
 	}
 	
-	/*void printTitle() {
-		System.out.println("[이뷱]: " + title);
+	void printTitle() {
 		System.out.println("제목: " + title);
-	}*/
+	}
 	
 	void setPrice() {
 		
@@ -47,6 +49,17 @@ class EBook4 extends Book5 {
 		super.setPrice(price + 10000);
 		this.price = price;
 	}
+	
+	@Override
+	void printTitle() {
+	System.out.println("제목 [이뷱]: " + title);
+}
+	
+	void printAlltitle() {
+		super.printTitle();
+		printTitle();
+	}
+
 	
 	/* 오버라이딩: 
     부모 클래스로부터 상속받은 메서드의 내용을 변경하는것으로 

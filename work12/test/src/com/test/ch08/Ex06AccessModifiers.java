@@ -43,9 +43,9 @@ class EBook5 extends Book22 {
 	String fontColor;
 
 	
-	/*void setEdition(int edition) {
+	void setEdition(int edition) {
 		this.edition = edition;
-	}*/
+	}
 	
 	
 	@Override
@@ -57,16 +57,35 @@ class EBook5 extends Book22 {
 	protected float getTax() {
 		return tax;
 	}
+	
+	/* 오버라이딩: 
+	부모 클래스로부터 상속받은 메서드의 내용을 변경하는것으로 
+	메서드의 선언부는 부모의 것과 완전히 일치해야함
+	  이름, 파라미터, 반환타입 같아야함 */
+	
+	@Override
+	public void setPrice(int price) {
+		price = price - 5000;
+		setDollarPrice(price);
+	}
+	
+	@Override
+	public int getPrice() {
+		return this.price;
+	}
 }
 
+
+
+	
 /*
-문제1. 
+문제1. o
 setEdition 메소드의 오류를 수정하세요.
 
-문제2. 
+문제2. o
 Book클래스의 title 변수를 private로 수정 후 발생되는 main메소드의 오류를 수정하세요. 
 
-문제3. 
+문제3. o
 EBook5 클래스의 setPrice 메소드를 오버라이딩 하세요.
 e북은 입력된 가격보다 5000원 낮은 금액으로 price가 설정되어야 합니다.
 setPrice 메소드 내에서 setDollarPrice 메소드를 호출하여 dollarPrice를 설정하세요.

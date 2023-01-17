@@ -15,6 +15,10 @@ public class EX07Encapsulation {
 		book2.setAuthor("엘컴퓨터학원");
 		book2.setPrice(30000);
 		Book6.printInfo(book2);
+		
+		Number num = new Number();
+		num.setNumber(0);
+		
 
 	}
 
@@ -30,6 +34,7 @@ class Book6 {
 		this.title = "[종이책]" + title;
 	}
 	
+
 	//getter
 	public void setAuthor(String author) {
 		this.author = author;
@@ -52,6 +57,20 @@ class Book6 {
 	
 	public static void printInfo(Book6 book) {
 		System.out.println(book.title + ", " + book.author + ", "  + book.price + "원");
+	}
+}
+
+
+class Number {
+	private int number;
+	
+	public void setNumber(int number) {
+		this.number =  (int)(Math.random()*9000) + 1000;
+		System.out.println(this.number);
+	}
+	
+	public int getNumber() {
+		return number;
 	}
 }
 

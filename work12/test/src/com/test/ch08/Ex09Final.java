@@ -36,6 +36,12 @@ class Book8 {
 	final public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	final public String getTitle(String title) {
+		return title;
+	}
+	
+	
 }
 
 class EBook7 extends Book8 {

@@ -3,9 +3,9 @@ package com.test.ch08.ex06;
 	public class Book22 {
 		private String title;
 		private String author;
-		private int price;
+		protected int price;
 		private int dollarPrice; 
-		int edition;
+		protected int edition;
 		protected float tax;
 		
 		public void setTitle(String title) {
@@ -33,7 +33,7 @@ package com.test.ch08.ex06;
 			return price;
 		}
 		
-		private void setDollarPrice(int price) {
+		protected void setDollarPrice(int price) {
 			dollarPrice = (int)(price / 1000f);
 		}
 		

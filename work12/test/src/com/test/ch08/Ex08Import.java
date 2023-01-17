@@ -8,7 +8,7 @@ import java.util.Calendar;
 import static java.lang.Math.PI;
 import static java.lang.Math.random;
 import static java.lang.Math.round;
-
+import static java.lang.Math.floor;
 /**
  * @author l5-morning
  *
@@ -29,6 +29,7 @@ public class Ex08Import {
 		System.out.println(PI);
 		System.out.println(random());
 		System.out.println(round(3.14));
+		System.out.println(floor(9));
 	}
 
 }

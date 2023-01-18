@@ -58,7 +58,7 @@ class EBook2 extends Book2 {
 	private String fontColor;
 	
 	public String getFontColor() {
-		return "이 책의 폰트 색은 " + fontColor + "입니다.";
+		return "[폰트색] " + fontColor;
 	}
 	
 	public void setFontColor(String fontColor) {
@@ -120,7 +120,7 @@ class Cart {
 
 
 /*
-문제 1. ?
+문제 1. o
 (1) 컴파일 에러가 발생하지 않도록 수정하세요.
 문제 2. o
 AudioBook 클래스를 추가하세요.

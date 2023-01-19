@@ -19,8 +19,8 @@ public class Ex03LocalClass {
 }
 
 class EBook3 {
-	private String title;
-	private String author;
+	//private String title;
+	//private String author;
 	private int price;
 	public final static float tax = 1.1f;
 	

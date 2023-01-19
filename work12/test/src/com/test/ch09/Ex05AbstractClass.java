@@ -28,12 +28,14 @@ public class Ex05AbstractClass {
 	}
 
 }
+
+//추상 클래스 (abstract class)
 abstract class Book5 {
 	protected String title;
 	protected int price;
 	private String author;
 	
-	public abstract String getTitle();
+	public abstract String getTitle(); // 추상 메소드 (abstract method)
 	public abstract int getPrice();
 	public abstract void print();
 	
@@ -69,7 +71,7 @@ class PaperBook extends Book5 {
 	@Override
 	public String getTitle() {
 		// TODO Auto-generated method stub
-		return "[종이책,"+type+"]" + title;
+		return "[종이책,"+type+"] " + title;
 	}
 
 	@Override
@@ -99,7 +101,7 @@ class EBook4 extends Book5 {
 	
 	@Override
 	public String getTitle() {
-		return "[e북,폰트:"+fontColor+"]" + title;
+		return "[e북, 폰트:"+fontColor+"] " + title;
 	}
 	
 	@Override
@@ -136,10 +138,24 @@ class Bookcase {
 	}
 }
 
-/*
-class AudioBook extends Book5 {
+
+
+
+/*class AudioBook extends Book5 {
+	private int volume;
+	
+	@Override
+	public void print() {
+		System.out.println(title + ", " + getAuthor() + ", " + getPrice() + ", " + volume);
+		
+	}
 	
 }
+
+class Cart extends Book5{
+
+}
+
 */
 
 /*
@@ -151,4 +167,12 @@ AudioBook 클래스에 볼륨 속성을 추가하고 print 메소드 호출 시 
 장바구니 클래스를 추가하세요.
 장바구니에 책을 담을 수 있는 메소드를 추가하세요.
 장바구니에 담긴 책의 제목과 저자, 금액을 출력하는 메소드를 추가하세요. 
+*/
+
+
+/*
+//추상클래스를 사용하는 이유는 컴파일 타임에서 오류를 잡기 위함이다.
+//보통 런타임에서 나타나는 에러는 상당히 복잡하고 이유를 찾기 힘들기에 다형성과 추상, 오버라이딩을 사용하면 컴파일 과정에서 오류를 찾을 수 있다. 
+// (여기서 에러: 작성하는 도중에 코드에서 오류가 나타나는 것)
+//컴파일 타임이란 자바를 읽는 기계가 읽을 수 있도록 바이트를 변환하는 과정이다. 즉, 컴퓨터 언어로 바꿔주는 것
 */

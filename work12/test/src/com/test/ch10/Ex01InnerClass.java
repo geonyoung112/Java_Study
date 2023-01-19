@@ -4,7 +4,23 @@ public class Ex01InnerClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		EBook book = new EBook();
+		book.setTitle("자바 알고리즘");
+		book.setAuthor("엘컴퓨터학원");
+		book.setTax(1.1f);
+		book.setCountry(EBook.TaxCalculator.USA);
+		book.setPrice(50000);
+		book.print();
 
+		System.out.println();
+		
+		//EBook.TaxCalculator calc = new TaxCalculator();
+		EBook.TaxCalculator calc1 = book.new TaxCalculator();
+		EBook.TaxCalculator calc2 = book.new TaxCalculator();
+		calc1.calcName = "계산기1";
+		calc2.calcName = "계산기2";
+		System.out.println(calc1.calcName);
+		System.out.println(calc2.calcName);
 	}
 
 }
@@ -97,4 +113,26 @@ class EBook {
 		}
 		return str;
 	}
+	
+	public void setCountry(int country) {
+		this.country = country;
+	}
+	
+	public int getAmount() {
+		return amount;
+	}
+	
+	public void print() {
+		System.out.println("책이름: " + title);
+		System.out.println("저자: " + author);
+		System.out.println("가격: " + amount);
+		System.out.println("판매국가: " + getCountryString());
+	}
 }
+
+/*
+문제 1.
+이너 클래스를 사용한 예제를 작성하세요.
+문제 2.
+아우터 클래스의 인스턴스 변수, 이너 클래스의 인스턴스 변수, 이너 크래스의 메소드내 지역 변수 모두 이름을 같게 설정하고 각각의 값을 출력하는 코드를 작성하세요.  
+*/

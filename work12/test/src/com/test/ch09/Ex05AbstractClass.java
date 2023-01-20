@@ -17,13 +17,26 @@ public class Ex05AbstractClass {
 		eb.setPrice(30000);
 		eb.setFontColor("블루");
 		eb.print();
-
+		
+		AudioBook6 ab = new AudioBook6();
+		ab.setTitle("오디오로 배우는 자바");
+		ab.setAuthor("엘코딩연구소");
+		ab.setPrice(40000);
+		ab.setVol(50);
+		ab.print();
+		
 		System.out.println();
 		
 		Bookcase bc = new Bookcase();
 		bc.add(pb);
 		bc.add(eb);
 		bc.printBooks();
+		
+		System.out.println();
+		
+		Cart5 cart = new Cart5();
+		cart.add(ab);
+		cart.printABooks();
 
 	}
 
@@ -38,6 +51,7 @@ abstract class Book5 {
 	public abstract String getTitle(); // 추상 메소드 (abstract method)
 	public abstract int getPrice();
 	public abstract void print();
+
 	
 	public void setTitle(String title) {
 		this.title = title;
@@ -115,6 +129,36 @@ class EBook4 extends Book5 {
 	}
 }
 
+class AudioBook6 extends Book5 {
+	private int volume;
+	
+	public void setVol(int volume) {
+		this.volume = volume;
+		
+	}
+	
+	public int getVol() {
+		return volume;
+	}
+	
+	@Override
+	public String getTitle() {
+		return "[오디오 북, 현재 볼륨:" + volume + "] " + title;
+	}
+	
+	@Override
+	public int getPrice() {
+		return (int)(price * 1.3f);
+	}
+	
+	@Override
+	public void print() {
+		System.out.println(title + ", " + getAuthor() + ", " + getPrice() + ", [volume]:" + volume);
+		
+	}
+	
+}
+
 class Bookcase {
 	private Book5[] books;
 	private int index;
@@ -139,31 +183,44 @@ class Bookcase {
 }
 
 class Cart5 {
-
-}
-
-
-
-
-abstract class AudioBook6 extends Book5 {
-	private int volume;
+	private AudioBook6[] abooks;
+	private int index;
 	
-	@Override
-	public void print() {
-		System.out.println(title + ", " + getAuthor() + ", " + getPrice() + ", " + volume);
-		
+	public Cart5() {
+		abooks = new AudioBook6[5];
+		index = 0;
 	}
 	
+	public void add(AudioBook6 abook) {
+		abooks [index] = abook;
+		index++;
+	}
+	
+	public void printABooks() {
+		for(int i=0; i<abooks.length; i++) {
+			if(abooks[i] == null)
+				return;
+			
+			System.out.println(abooks[i].getTitle());
+				
+		}
+	}
+
 }
+
+
+
+
+
 
 
 
 /*
 문제 1. o
 AudioBook 클래스에서 컴파일 오류가 발생하지 않도록 추상 메소드를 구현하세요.
-문제 2.
+문제 2. o
 AudioBook 클래스에 볼륨 속성을 추가하고 print 메소드 호출 시 볼륨 정보가 출력되도록 오버라이딩 하세요.
-문제 3.
+문제 3. o
 장바구니 클래스를 추가하세요.
 장바구니에 책을 담을 수 있는 메소드를 추가하세요.
 장바구니에 담긴 책의 제목과 저자, 금액을 출력하는 메소드를 추가하세요. 

@@ -47,15 +47,64 @@ public class Ex06Interface {
 		pfp.setPrinter();
 		pfp.printInfo();
 		
-		//printService = book1; 	//error
+		//printService = book1; 	//error - PrintServiceForPrinter를 구현하지 않음
 		//printService.printInfo();
 		
 	}
 
 }
 
+/*interface & abstract의 차이
+ * 추상 클래스는 public, protected, private 메소드를 가질 수 있다. 반면에 인터페이스는 public만 허용된다.
+ * abstract는 부모 자식간의 이용 -> 자바는 다중속성이 불가능하고 하나의 부모만 가진다.
+ * interface는 "특정 메소드를 이용하기" 위해 사용하고
+ * 선언할땐 interface
+ * 구현할땐 implements로 구현하고 클래스는 인터페이스를 여러개를 가져올 수 있음, 
+ * 추상은 여러개를 가지지 못함
+ * 공통점은 둘다 인스턴스를 생성하지 못한다.
+ * 더불어 인터페이스는 인터페이스끼리 부모, 자식으로 받아 오는 것도 가능하다.
+ * 만약 북이라는 부모가 아이템이라는 인터페이스를 받고있고 상속받은 이북이라는 자식이 있다면 굳이 implements를 작성하지 않아도 된다.
+ * default를 이용해 나중에 메소드를 추가해도 자동으로 생성하는 기능도 있다.
+ * 추상 클래스에는 멤버변수 선언이 가능하지만 인터페이스는 public static 변수만 선언이 가능하다.
+ * 인터페이스는 implements 키워드로 여러 인터페이스를 구현있다. 반면에 추상클래스는 extends 키워드로 1개의 클래스만 상속받을 수 있다.
+ */
+
+//INTERFACE CLASS
+interface OrderItem {
+	public abstract String getOrderName();//추상으로 선언만
+	public abstract int getOrderPrice();
+	
+}
+
+interface PrintService { //인터페이스 부모
+	public abstract void printInfo();
+	
+}
+
+interface PrintServiceForPrinter extends PrintService { //인터페이스 자식
+	public abstract void setting(); //자식이 가지는 메소드
+	/*
+	 * 만약 이 인터페이스를 가지는 100개의 클레스가 있다.
+	 * 나중에 버전을 업데이트 하기 위해
+	 * static으로 작성된 메소드를 수정한다면, 100개의 클래스 모두에게 오류가 난다. 
+	 * 또한 하나하나 수정하면 개발 비용이 많이 든다.
+	 * 그래서 이를 주의하고 보완하기 위해 "default"를 이용한다.
+	 * default는 추가하고 싶은 메소드를 작성해 해당 인터페이스를 구현한 100개의 클래스에 자동으로 적용하는 것
+	 */
+	default public void setPrinter() { //default를 이용한 메소드 구현
+		System.out.println("기본값: 1번 프린터"); 
+	}
+	
+	public static void getPrinterType() {
+		System.out.println("- 프린터 타입 -");
+		System.out.println("레이저 프린터입니다.");
+	}
+}
+
+//
+
 class Cart2 {
-	OrderItem[] items;
+	OrderItem[] items; //인터페이스를 이용해 배열생성가능
 	int index;
 	
 	public Cart2() {
@@ -71,12 +120,6 @@ class Cart2 {
 	public OrderItem[] get() {
 		return items;
 	}
-}
-
-interface OrderItem {
-	public abstract String getOrderName();
-	public abstract int getOrderPrice();
-	
 }
 
 class Book6 implements OrderItem {
@@ -110,20 +153,22 @@ class Book6 implements OrderItem {
 		this.price = price;
 	}
 	
-	@Override
-	public String getOrderName() {
+	@Override 
+	public String getOrderName() { //오버라이딩 후 메소드 내용 생성
 		return getTitle();
 	}
 	
 	@Override
-	public int getOrderPrice() {
+	public int getOrderPrice() { //오버라이딩 후 메소드 내용 생성
 		return getPrice();
 		
 	}
 }
 
-class EBook5 extends Book6 implements PrintService{
-		private String fontColor;
+
+
+class EBook5 extends Book6 implements PrintService{ //부모를 상속받으면서 implements를 구현하기
+		private String fontColor; //자식이 가지는 메소드
 		
 		public String getFontColor() {
 			return fontColor;
@@ -133,18 +178,18 @@ class EBook5 extends Book6 implements PrintService{
 			this.fontColor = fontColor;
 		}
 		
-		@Override 
+		@Override //Book 메소드 상속
 		public void setTitle(String title) {
 			super.setTitle("[e북]" + title);
 			
 		}
 		
-		@Override
+		@Override //Book 메소드 상속
 		public int getPrice() {
 			return (int)(price * 1.2f);
 		}
 		
-		@Override 
+		@Override  //OderItem 인터페이스
 		public String getOrderName() {
 			String title = getTitle() + ", 폰트" + getFontColor();
 			return title;
@@ -152,14 +197,14 @@ class EBook5 extends Book6 implements PrintService{
 		}
 
 		
-		@Override
+		@Override //OderItem 인터페이스
 		public int getOrderPrice() {
 			return getPrice();
 			
 		}
 		
 		@Override
-		public void printInfo() {
+		public void printInfo() { //PrintService 인터페이스 메소드 정의하기
 			System.out.println("---e북---");
 			System.out.println("책 이름: " + getTitle());
 			System.out.println("저자: " + getAuthor());
@@ -201,18 +246,18 @@ class Car implements OrderItem, PrintServiceForPrinter {
 		this.door = door;
 	}
 	
-	@Override
+	@Override //OderItem 인터페이스 메소드
 	public String getOrderName() {
 		return getModelName() + "[" + getDoor() + "도어]";
 	}
 	
-	@Override 
+	@Override //OderItem 인터페이스 메소드
 	public int getOrderPrice() {
 		return getTotalPrice();
 	}
 	
-	@Override 
-	public void printInfo() {
+	@Override //PFP 인터페이스 메소드
+	public void printInfo() { //상속받는 부모의 메소드 오버라이딩
 		System.out.println("- 차량정보 -");
 		System.out.println("모델명: " + getModelName());
 		System.out.println("가격: " + getTotalPrice());
@@ -222,7 +267,7 @@ class Car implements OrderItem, PrintServiceForPrinter {
 	}
 
 	@Override
-	public void setting() {
+	public void setting() { //자식인 PFP 인터페이스의 메소드
 		System.out.println("- 프린터 설정 -");
 		System.out.println("폰트 사이즈 9pt");
 		System.out.println("5매 출력");
@@ -238,7 +283,7 @@ class Car implements OrderItem, PrintServiceForPrinter {
 	*/
 }
 
-class OrderService {
+class OrderService { // 카트에 담은 아이템을 출력하는 클래스
 	public void order(Cart2 cart) {
 		OrderItem[] items = cart.get();
 		for(int i=0; i<items.length; i++) {
@@ -248,29 +293,13 @@ class OrderService {
 			
 		}
 	}
-	public static void orderPrint(PrintService p) {
-		p.printInfo();
+	public static void orderPrint(PrintService p) { // 인터페이스는 파라미터로 받아올 수 있음
+		p.printInfo(); 
 	}
 	
 } 
 
-interface PrintService {
-	public abstract void printInfo();
-	
-}
 
-interface PrintServiceForPrinter extends PrintService {
-	public abstract void setting();
-	
-	default public void setPrinter() {
-		System.out.println("기본값: 1번 프린터");
-	}
-	
-	public static void getPrinterType() {
-		System.out.println("- 프린터 타입 -");
-		System.out.println("레이저 프린터입니다.");
-	}
-}
 
 /*
 문제 1.

@@ -138,10 +138,14 @@ class Bookcase {
 	}
 }
 
+class Cart5 {
+
+}
 
 
 
-/*class AudioBook extends Book5 {
+
+abstract class AudioBook6 extends Book5 {
 	private int volume;
 	
 	@Override
@@ -152,14 +156,10 @@ class Bookcase {
 	
 }
 
-class Cart extends Book5{
 
-}
-
-*/
 
 /*
-문제 1.
+문제 1. o
 AudioBook 클래스에서 컴파일 오류가 발생하지 않도록 추상 메소드를 구현하세요.
 문제 2.
 AudioBook 클래스에 볼륨 속성을 추가하고 print 메소드 호출 시 볼륨 정보가 출력되도록 오버라이딩 하세요.

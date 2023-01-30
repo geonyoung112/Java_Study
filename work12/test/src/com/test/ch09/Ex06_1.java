@@ -105,6 +105,10 @@ class Iphone extends Phone implements Stock, Print {
 	private String in;
 	private String out;
 	//인터페이스에서 getter, setter 정의하는 법 
+	//인터페이스는 추상을 담고 있고 getter setter를 정의한다.
+	//하지만 실무에선 공통된 네임으로 각 사원들이 사용하기 때문에 안의 내용은 바뀌더라도 지역변수, 인스턴스 변수의
+	// 이름은 공통하게 사용된다. 그래서 각 클래스에서 선언하고 안의 메소드를 정의하면 된다.
+	
 	@Override
 	public void setIn(String in) {
 		this.in = in;

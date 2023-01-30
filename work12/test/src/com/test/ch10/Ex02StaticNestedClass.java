@@ -25,7 +25,7 @@ public class Ex02StaticNestedClass {
 class EBook2 {
 	private String title;
 	private String author;
-	private int price;
+	public static int price;
 	
 	static class TaxCalculator {
 		private static float tax;
@@ -50,7 +50,7 @@ class EBook2 {
 			}
 			
 			
-			//System.out.println(EBook2.this.price);
+			System.out.println(EBook2.price);
 			
 			return (int)(price * tax);
 					
@@ -78,7 +78,7 @@ class EBook2 {
 	}
 	
 	public void setPrice(int price) {
-		this.price = price;
+		EBook2.price = price;
 	}
 	
 	public void print() {
@@ -89,7 +89,5 @@ class EBook2 {
 }
 
 /*
-문제 1.
-static 중첩 클래스를 사용한 예제를 작성하세요.
 문제 2. (1)의 코드를 오류가 나지 않도록 수정하세요.
 */

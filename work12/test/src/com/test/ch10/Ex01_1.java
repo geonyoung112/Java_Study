@@ -7,6 +7,8 @@ public class Ex01_1 {
 		Outer o = new Outer(); // 아우터
 		Outer.Inner i = o.new Inner();//이너
 		i.method();
+		
+		System.out.println();
 		System.out.println(o.value);
 		System.out.println(i.value);
 		

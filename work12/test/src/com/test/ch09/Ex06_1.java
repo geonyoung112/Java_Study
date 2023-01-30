@@ -97,7 +97,7 @@ class Phone implements Print{
 
 class Iphone extends Phone implements Stock, Print {
 	
-	//인터페이스에서 getter, setter 정의하는 법 질문하기
+	//인터페이스에서 getter, setter 정의하는 법 
 	@Override 
 	public String getIn() {
 		return "10일 전";

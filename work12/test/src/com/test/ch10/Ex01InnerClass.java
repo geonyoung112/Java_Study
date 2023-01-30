@@ -1,7 +1,18 @@
 package com.test.ch10;
 
 public class Ex01InnerClass {
-
+	
+	// 이너 클래스 (내부 클래스)
+	/*
+	1. 내부 클래스에서 외부 클래스의 멤버에 손쉽게 접근할 수 있다.
+	2. 서로 관련 있는 클래스를 논리적으로 묶어서 표현함으로써, 코드의 캡슐화를 증가시킨다.
+	3. 외부에서는 내부 클래스에 접근할 수 없으므로, 코드의 복잡성을 줄일 수 있다.
+	종류
+	1. 정적 클래스(static class)
+	2. 인스턴스 클래스(instance class)
+	3. 지역 클래스(local class)
+	4. 익명 클래스(anonymous class)
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		EBook book = new EBook();

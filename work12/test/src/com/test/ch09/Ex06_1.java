@@ -15,6 +15,8 @@ public class Ex06_1 {
 		i.setName("아이폰 10");
 		i.setBrand("애플");
 		i.setPrice(1500000);
+		i.setIn("5일전");
+		i.setOut("3일후");
 		
 		Iphonepro pro = new Iphonepro();
 		pro.setName("모니터");
@@ -44,7 +46,11 @@ interface Stock {
 	public abstract int getStockPrice();
 	//인터페이스에서 getter, setter 정의하는 법 질문하기
 	public abstract String getIn();
+	public abstract void setIn(String in);
 	public abstract String getOut();
+	public abstract void setOut(String out);
+	
+	
 }
 
 interface Print{ 
@@ -96,16 +102,27 @@ class Phone implements Print{
 }
 
 class Iphone extends Phone implements Stock, Print {
-	
+	private String in;
+	private String out;
 	//인터페이스에서 getter, setter 정의하는 법 
+	@Override
+	public void setIn(String in) {
+		this.in = in;
+	}
+	
 	@Override 
 	public String getIn() {
-		return "10일 전";
+		return in;
+	}
+	
+	@Override
+	public void setOut(String out) {
+		this.out = out;
 	}
 	
 	@Override
 	public String getOut() {
-		return "5일 후";
+		return out;
 	}
 	
 	@Override
@@ -131,7 +148,7 @@ class Iphone extends Phone implements Stock, Print {
 }
 
 
-class Iphonepro extends Phone implements Print{
+class Iphonepro extends Phone{
 private String brand;
 	
 	public String getBrand() {

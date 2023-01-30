@@ -12,6 +12,11 @@ public class Ex02StaticNestedClass {
 		eb.setAuthor("엘컴퓨터학원");
 		eb.setPrice(50000);
 		eb.print();
+		
+		EBook2.TaxCalculator et = new EBook2.TaxCalculator();
+		et.calcName = "asdfa";
+		EBook2.TaxCalculator et2 = new EBook2.TaxCalculator();
+		et2.calcName = "asdfasdf2";
 
 	}
 

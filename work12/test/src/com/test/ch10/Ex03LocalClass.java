@@ -42,7 +42,9 @@ class EBook3 {
 			float getDollarPrice() {
 				return taxPrice/dollar;
 			}
- 		} 
+ 		}
+		
+		
 		
 		Price p = new Price(price);
 		int taxPrice = p.getTaxPrice();
@@ -68,6 +70,11 @@ class EBook3 {
 			return;
 		this.price = price;
 	}
+	
+	/*public static boolean Effectiveness (String title, String author) {
+		if(!())
+	}
+	*/
 }
 
 /*

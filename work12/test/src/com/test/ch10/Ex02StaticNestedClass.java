@@ -25,7 +25,7 @@ public class Ex02StaticNestedClass {
 class EBook2 {
 	private String title;
 	private String author;
-	public static int price;
+	public int price;
 	
 	static class TaxCalculator {
 		private static float tax;
@@ -49,8 +49,13 @@ class EBook2 {
 					tax = 1.3f;
 			}
 			
-			
-			System.out.println(EBook2.price);
+			//문제 2번
+			/*
+			 * 이전에는 아우터 클래스의 price를 static으로 바꿨음
+			 * 하지만 아우터 클래스의  price는 고정되면 안도기 때문에 
+			 * 파라미터로 받아오기
+			 */
+			System.out.println(price);
 			
 			return (int)(price * tax);
 					
@@ -78,7 +83,7 @@ class EBook2 {
 	}
 	
 	public void setPrice(int price) {
-		EBook2.price = price;
+		this.price = price;
 	}
 	
 	public void print() {

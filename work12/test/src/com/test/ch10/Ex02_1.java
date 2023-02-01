@@ -9,9 +9,8 @@ public class Ex02_1 {
 		al.setTitle("사건의 지평선");
 		al.setSinger("윤하");
 		al.setPrice(40000);
-		int price = Album.Shippingfee.getShippingfee(40000, Album.Shippingfee.JEJU);
-		
-		//질문하기
+		// "int price = " 작성하기 않아도 된다. price를 사용하지 않기 때문에 그냥 정의 가능
+		Album.Shippingfee.getShippingfee(40000, Album.Shippingfee.JEJU);
 		al.print();
 
 	}
@@ -20,7 +19,7 @@ public class Ex02_1 {
 class Album {
 	private String title;
 	private String singer;
-	public static int price;
+	public int price;
 	
 	static class Shippingfee {
 		private static int fee;
@@ -70,13 +69,13 @@ class Album {
 	}
 	
 	public void setPrice(int price) {
-		Album.price = price;
+		this.price = price;
 	}
 	
 	public void print() {
 		System.out.println("앨범 제목: " + title);
 		System.out.println("가수: " + singer);
-		System.out.println("가격: " + Album.price);
+		System.out.println("가격: " + this.price);
 		System.out.println("배송비 포함 가격: " + Shippingfee.total);
 		
 	}

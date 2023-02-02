@@ -11,6 +11,10 @@ public class Ex01AnonymousClass {
 		PrintService ps = new PrintServiceForPrinter();
 		b1.printInfo(ps);
 		
+		Book b2 = new Book();
+		b2.setTitle("만화로 배우는 자바");
+		b2.setAuthor("엘컴퓨터학원");
+
 		//위 아래 코드는 같은 내용
 		//사용하는 메소드가 자주 사용되는 것이 아닌 일회성에서 끝난다면 익명클래스를 사용한다.
 		//굳이 일회성 메소드라면 클래스와 인스턴스를 생성하는 것이 번거롭다.
@@ -27,27 +31,70 @@ public class Ex01AnonymousClass {
 			@Override
 			public void print() {
 				System.out.println("- FAX로 전송 -");
-				System.out.println(b1.getTitle() + "," + b1.getAuthor());
+				System.out.println(b1.getTitle() + ", " + b1.getAuthor());
 				System.out.println();
+			}
+
+			@Override
+			public void print(Book b) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		
-		b1.printInfo(new PrintService() {
+		b1.printInfo(new PrintService() { //지역변수 없이 사용가능
 			
 			@Override
 			public void print() {
 				System.out.println("- 앱 알림으로 전송 -");
-				System.out.println(b1.getTitle() + "," + b1.getAuthor());
+				System.out.println(b2.getTitle() + ", " + b2.getAuthor()); //지역변수 없이 사용가능
 				System.out.println();
 			}
-		});
 
+			@Override
+			public void print(Book b) {
+
+			}
+		});
+		
+		b1.createBook(new Device() {
+
+			@Override
+			public void create() {
+				// TODO Auto-generated method stub
+				System.out.println("- 이북 생성 -");
+				System.out.println(b1.getTitle() + ", " + b1.getAuthor());
+				System.out.println(); 
+			}
+			
+		});
+		
+		b1.createBook(new Device() {
+
+			@Override
+			public void create() {
+				// TODO Auto-generated method stub
+				System.out.println("- 종이책 생성 -");
+				System.out.println(b2.getTitle() + ", " + b2.getAuthor());
+				System.out.println();
+			}
+			
+		});
 	}
 
 }
 
 interface PrintService{
 	public abstract void print();
+	public abstract void print(Book b);
+	//익명 클래스는 파라미터를 받지 않아도 메인 메소드에 존재하기에 그 안에 있는 
+	//인스턴스는 다 사용가능하다: 익명클래스의 이점
+	
+	//하지만 기존의 인터페이스 사용하기 위해선 파라미터로 불러와야 한다.
+}
+
+interface Device{
+	public abstract void create();
 }
 
 class PrintServiceForPrinter implements PrintService {
@@ -55,8 +102,15 @@ class PrintServiceForPrinter implements PrintService {
 	@Override
 	public void print() {
 		System.out.println("- 프린터로 출력 -");
-		// (1)
 		System.out.println("책 인스턴스가 필요합니다.");
+		System.out.println();
+	}
+	
+	@Override
+	public void print(Book b) {
+		System.out.println("- 프린터로 출력 -");
+		System.out.println("책 제목: " + b.title );
+		System.out.println("책 저자: " + b.author);
 		System.out.println();
 	}
 }
@@ -83,6 +137,10 @@ class Book {
 	
 	public void printInfo(PrintService ps) {
 		ps.print();
+	}
+	
+	public void createBook(Device de) {
+		de.create();
 	}
 }
 /*

@@ -14,6 +14,7 @@ public class Ex03Enum {
 		b1.setAuthor("엘컴퓨터학원");
 		b1.setPrice(30000);
 		b1.setCountry(Country.KOREA);
+		b1.setGenre(Genre.STUDY);
 		Book1.print(b1);
 		
 		Book1 b2 = new Book1();
@@ -28,7 +29,7 @@ public class Ex03Enum {
 		b3.setTitle("Java 컬렉션");
 		b3.setAuthor("엘컴퓨터학원");
 		b3.setPrice(50000);
-		b3.setCountry(Country.valueOf(s.nextLine()));
+		b3.setCountry(Country.valueOf(s.nextLine())); //사용자의 입력값을 받아오는 코드
 		Book1.print(b3);
 		
 		Country[] countries = Country.values();
@@ -49,6 +50,7 @@ class Book1 {
 	private String author;
 	private int price;
 	private Country country;
+	private Genre genre;
 	
 	public Country getCountry() {
 		return country;
@@ -56,6 +58,14 @@ class Book1 {
 	
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+	
+	public Genre getGenre() {
+		return genre;
+	}
+	
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
 	
 	public void setPrice(int price) {
@@ -111,6 +121,10 @@ class Book1 {
 
 enum Country{
 	KOREA, USA, UK
+}
+
+enum Genre{
+	STUDY, ACTION, FANTASY
 }
 
 /*

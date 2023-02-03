@@ -10,6 +10,10 @@ public class Ex05Enum {
 		b1.setPrice(30000);
 		b1.setCountry(Ex04Country.KOREA);
 		Book2.print(b1);
+		ReGerne re = ReGerne.valueOf("ACTION");
+		System.out.println("장르: " + re.getName());
+		System.out.println();
+		
 		
 		Book2 b2 = new Book2();
 		b2.setTitle("Java Enum");
@@ -17,6 +21,9 @@ public class Ex05Enum {
 		b2.setPrice(30000);
 		b2.setCountry(Ex04Country.USA);
 		Book2.print(b2);
+		ReGerne re1 = ReGerne.valueOf("FANTASY");
+		System.out.println("장르: " + re1.getName());
+		System.out.println();
 		
 		Book2 b3 = new Book2();
 		b3.setTitle("Java Enum");
@@ -24,6 +31,9 @@ public class Ex05Enum {
 		b3.setPrice(30000);
 		b3.setCountry(Ex04Country.ETC);
 		Book2.print(b3);
+		ReGerne re2= ReGerne.valueOf("STUDY");
+		System.out.println("장르: " + re2.getName());
+		System.out.println();
 
 	}
 
@@ -34,12 +44,12 @@ class Book2 {
 	private int price;
 	private Ex04Country country;
 	
-	public Ex04Country getCountry() {
-		return country;
-	}
-	
 	public void setCountry(Ex04Country country) {
 		this.country = country;
+	}
+	
+	public Ex04Country getCountry() {
+		return country;
 	}
 	
 	public void setPrice(int price) {
@@ -70,7 +80,22 @@ class Book2 {
 		System.out.println("제목: " + book.getTitle());
 		System.out.println("저자: " + book.getAuthor());
 		System.out.println("가격: " + book.getPrice());
-		System.out.println();
+	}
+}
+
+enum ReGerne {
+	ACTION("액션"), 
+	FANTASY("판타지"), 
+	STUDY("학습용");
+	
+	private final String name;
+	
+	ReGerne(String name) {
+		this.name = name;
+	}	
+	
+	public String getName() {
+		return name;
 	}
 }
 

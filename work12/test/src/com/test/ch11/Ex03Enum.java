@@ -22,6 +22,7 @@ public class Ex03Enum {
 		b2.setAuthor("lcomputerstudy");
 		b2.setPrice(30000);
 		b2.setCountry(Country.USA);
+		b2.setGenre(Genre.FANTASY);
 		Book1.print(b2);
 		
 		System.out.println("국가를 입력해주세요: ");
@@ -29,6 +30,7 @@ public class Ex03Enum {
 		b3.setTitle("Java 컬렉션");
 		b3.setAuthor("엘컴퓨터학원");
 		b3.setPrice(50000);
+		b3.setGenre(Genre.ACTION);
 		b3.setCountry(Country.valueOf(s.nextLine())); //사용자의 입력값을 받아오는 코드
 		Book1.print(b3);
 		
@@ -115,6 +117,8 @@ class Book1 {
 		System.out.println("제목: " + book.getTitle());
 		System.out.println("저자: " + book.getAuthor());
 		System.out.println("가격: " + book.getPrice());
+		System.out.println("나라: " + book.getCountry());
+		System.out.println("장르: " + book.getGenre());
 		System.out.println();
 	}
 }

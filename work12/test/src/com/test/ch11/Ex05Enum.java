@@ -10,6 +10,7 @@ public class Ex05Enum {
 		b1.setPrice(30000);
 		b1.setCountry(Ex04Country.KOREA);
 		Book2.print(b1);
+		
 		ReGerne re = ReGerne.valueOf("ACTION");
 		System.out.println("장르: " + re.getName());
 		System.out.println();
@@ -21,6 +22,7 @@ public class Ex05Enum {
 		b2.setPrice(30000);
 		b2.setCountry(Ex04Country.USA);
 		Book2.print(b2);
+		
 		ReGerne re1 = ReGerne.valueOf("FANTASY");
 		System.out.println("장르: " + re1.getName());
 		System.out.println();
@@ -31,6 +33,7 @@ public class Ex05Enum {
 		b3.setPrice(30000);
 		b3.setCountry(Ex04Country.ETC);
 		Book2.print(b3);
+		
 		ReGerne re2= ReGerne.valueOf("STUDY");
 		System.out.println("장르: " + re2.getName());
 		System.out.println();

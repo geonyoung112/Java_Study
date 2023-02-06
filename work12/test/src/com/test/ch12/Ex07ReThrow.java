@@ -83,7 +83,7 @@ class LoginService3{
 		
 	}
 	
-	public static void increaseCount() {
+	public static void increaseCount() { 
 		count++;
 		System.out.println("로그인 시도" + count + "회");
 	}

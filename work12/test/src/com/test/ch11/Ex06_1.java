@@ -27,9 +27,8 @@ class Car {
 		this.minSpeed = 0;
 	}
 	
-	Car(String name, int year, String color, int maxSpeed, int minSpeed){
+	Car(String name, String color, int maxSpeed, int minSpeed){
 		this.name = name;
-		this.year = year;
 		this.color = color;
 		this.maxSpeed = maxSpeed;
 		this.minSpeed = minSpeed;
@@ -42,6 +41,7 @@ class Car {
 	public String getName() {
 		return name;
 	}
+	
 	
 	public String getColor() {
 		return color;

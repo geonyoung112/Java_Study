@@ -14,10 +14,10 @@ public class Ex01TryCatch {
 			int num = scanner.nextInt();
 			System.out.println(num);
 			
-			}catch(Exception e) {
-				System.out.println("숫자만 입력 가능합니다.");
-				
-			}
+		}catch(Exception e) {
+			System.out.println("숫자만 입력 가능합니다.");
+			
+		}
 			
 		System.out.println("프로그램이 종료됩니다.");
 	}

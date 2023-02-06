@@ -29,7 +29,9 @@ public class Ex07Scope {
 		System.out.println();
 	}
 	//param은 이전 선언된 5라는 숫자를 받아온 지역변수로서 이때부터 사용가능
-	public static void testScope(int param) { //staic void 같이?
+	public static void testScope(int param) {
+		//staic void 같이 = 인스턴트를 생성할 수 없으면서 외부에서 모두 접근가능하고 반환하는 값이 없다는 뜻: 
+		//메인 메소드에서만 이용되는 것은 아님 (고정되어 있는 형식이 아니라는 뜻)
 		System.out.println("메소드 시작");
 		
 		int local = 7; //로컬도 마찬가지 메소드가 끝날때까지 사용가능

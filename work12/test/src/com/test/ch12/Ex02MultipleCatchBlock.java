@@ -29,7 +29,7 @@ public class Ex02MultipleCatchBlock {
 			
 		}catch (Exception e) {
 			System.out.println("예외 발생!!!");
-			e.printStackTrace();
+			e.printStackTrace(); // 예외가 어디서 일어났는지 알려주는 
 		
 		}
 		

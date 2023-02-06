@@ -66,7 +66,7 @@ public class Ex07Scope {
 				if (i == 0) {
 					System.out.println("if문 시작");
 					
-					int k = 7;
+					//int k = 7;
 					System.out.printf("iv = %d%n", iv);
 					System.out.printf("param = %d%n", param);
 					System.out.printf("local = %d%n", local);

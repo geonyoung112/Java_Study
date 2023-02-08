@@ -20,6 +20,7 @@ public class Ex03Finally {
 			System.out.println("숫자만 입력하세요.");
 			
 		} finally {
+			System.out.println("num의 값은 " + num + "입니다.");
 			System.out.println("예외의 발생 여부와 상관없이 실행됩니다.");
 			
 		}

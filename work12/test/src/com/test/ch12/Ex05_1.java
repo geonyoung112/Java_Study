@@ -2,6 +2,7 @@ package com.test.ch12;
 
 
 //자판기 프로그램
+//VendingMachine
 public class Ex05_1 {
 
 	public static void main(String[] args) {

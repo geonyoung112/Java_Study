@@ -7,7 +7,7 @@ public class Ex04UncheckedException {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 			
-			File f = new File("./src/com/lcomputerstudy/books/java/ch12/hello.txt");
+			File f = new File("./src/com/test/ch12/hello.txt");
 			
 			//f.createNewFile();	// Checked Exception
 			

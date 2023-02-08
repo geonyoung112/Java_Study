@@ -133,5 +133,5 @@ class PasswordMismatchException3 extends Exception{
 
 /*
 문제 1.
-자판기 프로그램에 re throw를 적용해 주세요.
+자판기 프로그램에 rethrow를 적용해 주세요.
 */

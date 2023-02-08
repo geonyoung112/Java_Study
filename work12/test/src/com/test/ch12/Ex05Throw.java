@@ -37,16 +37,25 @@ public class Ex05Throw {
 		try {
 			if(!DB_ID.equals(user.getId())) {
 				throw new IDMismatchException("잘못된 아이디를 입력하였습니다.");
+				
 			}else if(!DB_PW.equals(user.getPassword())) {
 				throw new PasswordMismatchException("잘못된 패스워드를 입력하였습니다.");
+				
 			}else {
 				user.setLogin(true);
 			}
 		} catch(IDMismatchException e) {
 			System.out.println(e.getMessage());
 			System.out.println("비밀번호 핮기를 원하시면 클릭해주세요.");
+			
+		}catch(PasswordMismatchException e) {
+			System.out.println(e.getMessage());
+			System.out.println("비밀번호 찾기를 원하시면 클릭해주세요.");
+			
 		}catch(Exception e) {
+		
 			System.out.println("시스템 장애");
+			
 		}finally {
 			increaseCount();
 		}
@@ -59,6 +68,8 @@ public class Ex05Throw {
 		System.out.println("- 로그인 화면 -");
 		System.out.println("아이디를 입력하세요: ");
 		user.setId(scanner.nextLine());
+		System.out.println("패스워드를 입력하세요: ");
+		user.setPassword(scanner.nextLine());
 		
 		return user;
 	}

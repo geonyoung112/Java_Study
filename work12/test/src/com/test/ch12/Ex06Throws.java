@@ -3,7 +3,8 @@ package com.test.ch12;
 import java.util.Scanner;
 
 public class Ex06Throws {
-
+	
+	//main은 사용자의 입장에서 생각해 작성한 객체를 사용하는 공간
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		while (true) {
@@ -43,15 +44,17 @@ public class Ex06Throws {
 	}
 
 }
+
+//개발자의 입장에서 작성되는 공간
 class LoginService2{
 	private static final String DB_ID = "admin";
 	private static final String DB_PW = "1234";
 	private static int count = 0;
 	
-	public static void login(User2 user)throws IDMismatchException2, PasswordMismatchException2{
+	public static void login(User2 user)throws IDMismatchException2, PasswordMismatchException2{//throws는 발생한 예외를 메소드로 넘기는 것
 		if(!DB_ID.equals(user.getId())) {
 			throw new IDMismatchException2("잘못된 아이디를 입력하였습니다.");
-			
+			//throw는 예외를 발생시키는 것
 		}else if(!DB_PW.equals(user.getPassword())) {
 			throw new PasswordMismatchException2("잘못된 패스워드를 입력하였습니다.");
 		}else {

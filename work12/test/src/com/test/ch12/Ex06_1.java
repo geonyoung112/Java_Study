@@ -2,22 +2,15 @@ package com.test.ch12;
 
 import java.util.Scanner;
 
-//자판기 프로그램
-//VendingMachine
-public class Ex05_1 {
+public class Ex06_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Vendingmachine.User();
-		
-		
-	
-
 	}
 
 }
-
-class Vendingmachine {
+class Vendingmachine2 {
 	public static final int Max = 5;
 	
 	static String[] box = new String[Max];
@@ -123,28 +116,25 @@ class Vendingmachine {
 	}
 }
 
-class MisInput extends Exception{
+class MisInput2 extends Exception{
 	private static final long serialVersionUID = 1L;
 	//네트워크 상에서 클래스를 넘겨줄때 시리얼 넘버를 요구함
 	//그래서 시리얼 넘버를 작성한다.
-	
-	MisInput(String msg){
+
+	MisInput2(String msg){
 		super(msg);
 	}
 }
  
-class NotEnoughBalance extends Exception {
+class NotEnoughBalance2 extends Exception {
 	private static final long serialVersionUID = 1L;
 
-	NotEnoughBalance(String msg) {
+	NotEnoughBalance2(String msg) {
 		super(msg);
 	}
 }
 
 /*
 문제 1.
-음료를 뽑을 수 있는 자판기 프로그램을 만들어 주세요. 
-제공되는 음료 외의 번호 입력 시 발생되는 사용자 정의 예외 클래스를 작성해 주세요.
-잔액이 부족할 경우 발생되는 사용자 정의 예외 클래스를 작성해 주세요.
-각각의 예외 발생에 대해 예외처리하는 코드를 작성해 주세요.
+자판기 프로그램을 throws 가 적용된 코드로 수정하세요.
 */

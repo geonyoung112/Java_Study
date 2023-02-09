@@ -46,7 +46,7 @@ public class Ex05Throw {
 			}
 		} catch(IDMismatchException e) {
 			System.out.println(e.getMessage());
-			System.out.println("비밀번호 핮기를 원하시면 클릭해주세요.");
+			System.out.println("아이디 찾기를 원하시면 클릭해주세요.");
 			
 		}catch(PasswordMismatchException e) {
 			System.out.println(e.getMessage());

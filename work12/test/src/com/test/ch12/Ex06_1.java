@@ -6,7 +6,7 @@ public class Ex06_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Vendingmachine.User();
+		Vendingmachine2.User();
 	}
 
 }
@@ -63,9 +63,9 @@ class Vendingmachine2 {
 					
 					try {
 						 if(num>5)
-							throw new MisInput("메뉴 입력번호 오류");
+							throw new MisInput2("메뉴 입력번호 오류");
 
-						}catch(MisInput e) {
+						}catch(MisInput2 e) {
 							System.out.println("번호를 잘못입력하셨습니다.");
 							System.out.println("처음으로 돌아갑니다.");
 							continue;
@@ -80,9 +80,9 @@ class Vendingmachine2 {
 					} else {
 						try {
 							if(money < price[num-1]) {
-							throw new NotEnoughBalance("잔액이 부족합니다.");
+							throw new NotEnoughBalance2("잔액이 부족합니다.");
 							}
-						} catch (NotEnoughBalance e) {
+						} catch (NotEnoughBalance2 e) {
 							System.out.println("잔액이 부족합니다. 고객님의 " + money + "원을 반환합니다.");
 							System.out.println("처음으로 돌아갑니다.");
 							continue;
@@ -119,7 +119,7 @@ class Vendingmachine2 {
 class MisInput2 extends Exception{
 	private static final long serialVersionUID = 1L;
 	//네트워크 상에서 클래스를 넘겨줄때 시리얼 넘버를 요구함
-	//그래서 시리얼 넘버를 작성한다.
+	//그래서 시리얼 넘버를 작성
 
 	MisInput2(String msg){
 		super(msg);

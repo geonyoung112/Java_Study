@@ -120,12 +120,22 @@ class User3{
 }
 
 class IDMismatchException3 extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public IDMismatchException3(String message) {
 		super(message);
 	}
 }
 
 class PasswordMismatchException3 extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public PasswordMismatchException3(String message) {
 		super(message);
 	}

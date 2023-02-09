@@ -111,18 +111,33 @@ class User4{
 }
 
 class LoginException extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public LoginException(String message, Exception e) {
 		super(message, e);
 	}
 }
 
 class IDMismatchException4 extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public IDMismatchException4(String message) {
 		super(message);
 	}
 }
 
 class PasswordMismatchException4 extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public PasswordMismatchException4(String message) {
 		super(message);
 	}

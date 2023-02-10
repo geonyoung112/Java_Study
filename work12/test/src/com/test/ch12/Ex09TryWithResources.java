@@ -16,7 +16,7 @@ public class Ex09TryWithResources {
 		try2();
 	}
 	
-	//새로운 요즘 방식
+	//새로운 요즘 방식, 메소드는 변수 첫글자 소문자
 	public static void try1() {
 		try(
 				FileReader fr = new FileReader("./scr/com/test/ch12/Ex01TryCatch.java");

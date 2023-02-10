@@ -77,52 +77,51 @@ class Vendingmachine2 {
 					System.out.println("--------------");
 					
 					if(run) {
-					System.out.println("동전이나 지폐를 넣어주세요: ");
-					money = scanner.nextInt();
+						System.out.println("동전이나 지폐를 넣어주세요: ");
+						money = scanner.nextInt();
 			
-					System.out.println("메뉴를 골라두세요: ");
-					int num = scanner.nextInt();
+						System.out.println("메뉴를 골라두세요: ");
+						int num = scanner.nextInt();
 					
 					//MisInput2 예외발생
-					if(num>5) {
-						throw new MisInput2("메뉴 입력번호 오류");
-					}
+						if(num>5) {
+							throw new MisInput2("메뉴 입력번호 오류");
+						}
 					
 					
 					
-					if(money >= price[num-1]) {
-						System.out.println(box[num-1] + " 이/가 나왔습니다.");
-						money = money - price[num-1];
-						System.out.println("잔액은 " + money + "입니다.");
-						System.out.println();
+						if(money >= price[num-1]) {
+							System.out.println(box[num-1] + " 이/가 나왔습니다.");
+							money = money - price[num-1];
+							System.out.println("잔액은 " + money + "입니다.");
+							System.out.println();
 						
 						//NotEnoughBalance2 예외발생
-					} else {
-							if(money < price[num-1]) {
-							throw new NotEnoughBalance2("잔액 부족");
+						} else {
+								if(money < price[num-1]) {
+									throw new NotEnoughBalance2("잔액 부족");
 							
-					}	
-				}
+								}	
+						}
 				
-			if(money == 0) {
-				System.out.println("이용해주셔서 감사랍니다.");
-				run = true;
-			}
+						if(money == 0) {
+							System.out.println("이용해주셔서 감사랍니다.");
+							run = true;
+						}
 			
 	
 			
 			
-			System.out.println("1: 계속 구매하기 2: 잔돈 반환하기" );
-			System.out.println("번호를 입력하세요: ");
-			int num1 = scanner.nextInt();
+						System.out.println("1: 계속 구매하기 2: 잔돈 반환하기" );
+						System.out.println("번호를 입력하세요: ");
+						int num1 = scanner.nextInt();
 			
-					if(num1 == 1) {
-						continue;
-					} 
-					else if (num1 == 2) {
-						System.out.println("거스름돈 " + money + "원이 반환됩니다.");
-						System.out.println("감사합니다.");
-						break;
+						if(num1 == 1) {
+							continue;
+						}else if (num1 == 2) {
+							System.out.println("거스름돈 " + money + "원이 반환됩니다.");
+							System.out.println("감사합니다.");
+							break;
 						
 						}
 					}

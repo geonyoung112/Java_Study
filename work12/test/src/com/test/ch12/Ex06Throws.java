@@ -13,7 +13,7 @@ public class Ex06Throws {
 			user = LoginService2.form();
 			
 			try {
-				LoginService2.login(user);;
+				LoginService2.login(user);
 				
 			} catch (IDMismatchException2 e) {
 				System.out.println(e.getMessage());
@@ -117,12 +117,22 @@ class User2{
 }
 
 class IDMismatchException2 extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public IDMismatchException2(String message) {
 		super(message);
 	}
 }
 
 class  PasswordMismatchException2 extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public  PasswordMismatchException2(String message) {
 		super(message);
 	}

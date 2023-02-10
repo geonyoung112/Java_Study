@@ -2,10 +2,13 @@ package com.test.ch12;
 
 import java.util.Scanner;
 
+//사용자와 프로그래머 둘 다 예외처리가 가능한 방법
 public class Ex07ReThrow {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//예외처리가 발생한 변수를 불러오는 곳에도 try, catch로 예외처리를 하는 것
 		while(true) {
 			User3 user = null;
 			
@@ -42,7 +45,8 @@ class LoginService3{
 	private static final String DB_PW = "1234";
 	private static int count = 0;
 	
-	public static void login(User3 user) throws IDMismatchException3, PasswordMismatchException3{
+	public static void login(User3 user) throws IDMismatchException3, PasswordMismatchException3{ //throws를 적고
+		//1차적으로 try, catch를 이용해 이쪽에서도 예외를 처리한다.
 		try {
 			if(!DB_ID.equals(user.getId())) {
 				throw new IDMismatchException3("잘못된 아이디를 입력하였습니다.");
@@ -56,7 +60,7 @@ class LoginService3{
 			}
 		}catch(IDMismatchException3 e) {
 			System.out.println("아이디 찾기를 원하시면 클릭해주세요.");
-			throw e;
+			throw e; //사용자에서도 e를 통해 받아올 수 있도록 해당 구문을 작성한다.
 		}catch(PasswordMismatchException3 e) {
 			System.out.println("비밀번호 찾기를 원하시면 클릭해주세요.");
 			throw e;
@@ -120,9 +124,6 @@ class User3{
 }
 
 class IDMismatchException3 extends Exception {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public IDMismatchException3(String message) {
@@ -131,9 +132,6 @@ class IDMismatchException3 extends Exception {
 }
 
 class PasswordMismatchException3 extends Exception{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public PasswordMismatchException3(String message) {

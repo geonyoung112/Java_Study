@@ -2,10 +2,19 @@ package com.test.ch12;
 
 import java.util.Scanner;
 
+//협업에선 들여쓰기를 중요하게 잘 맞춰서 넘겨야함
+//구문을 이해하기 어려우니 주의해서 작성하자
 public class Ex06_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//throws 구문
+		
+		// 질문? 여기선 왜 EX05_1과 달리 continue를 사용할 수 없는가?
+		//continue는 if문에 작성하게되면, 에외처리하는 구문에서도 계속 돌아가고 있기 때문에 작성하기 어렵다
+		// 그러니 사용하고 싶으면 user에서 예외처리하는 방식을 사용해야함(Ex05_1)
+		
 		try {
 			Vendingmachine2.user();
 			
@@ -74,11 +83,11 @@ class Vendingmachine2 {
 					System.out.println("메뉴를 골라두세요: ");
 					int num = scanner.nextInt();
 					
-					
+					//MisInput2 예외발생
 					if(num>5) {
 						throw new MisInput2("메뉴 입력번호 오류");
-						
 					}
+					
 					
 					
 					if(money >= price[num-1]) {
@@ -87,6 +96,7 @@ class Vendingmachine2 {
 						System.out.println("잔액은 " + money + "입니다.");
 						System.out.println();
 						
+						//NotEnoughBalance2 예외발생
 					} else {
 							if(money < price[num-1]) {
 							throw new NotEnoughBalance2("잔액 부족");

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+//운영체제에서 자원을 받아올때 사용하는 
 public class Ex09TryWithResources {
 
 	public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class Ex09TryWithResources {
 		try2();
 	}
 	
+	//새로운 요즘 방식
 	public static void try1() {
 		try(
 				FileReader fr = new FileReader("./scr/com/test/ch12/Ex01TryCatch.java");
@@ -28,8 +30,9 @@ public class Ex09TryWithResources {
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}//요즘은 자원을 받아오고 사용하고 나면 자동으로 닫는 방법이 생겨 사용중
 	
+	//예전 방식
 	public static void try2() {
 		FileReader fr = null;
 		BufferedReader br = null;
@@ -55,6 +58,7 @@ public class Ex09TryWithResources {
 			}
 		}
 	}
+	//예전에는 계속 자원을 쓰기도 전에 닫아버려서 파이널을 이용해서 닫아줘야했다.
 
 }
 

@@ -2,6 +2,10 @@ package com.test.ch12;
 
 import java.util.Scanner;
 
+
+//만약 로그인 예외처리에서 10개 넘게 예외처리를 해야한다면, 관련된 예외처리를 그룹화하여 
+//처리할땐 그룹 네임만 불러오게 하는 방법
+
 public class Ex08ChainedException {
 
 	public static void main(String[] args) {
@@ -51,11 +55,13 @@ class LoginService4{
 			}
 		} catch (IDMismatchException4 e) {
 			System.out.println("아이디 찾기를 원하시면 클릭해주세요.");
-			throw new LoginException("로그인 예외가 발생하였습니다.", e);
+			throw new LoginException("로그인 예외가 발생하였습니다.", e); 
+			//catch문을 작성할때도 뒤에 파라미터들을 받아오면 사용가능
 			
 		} catch(PasswordMismatchException4 e) {
 			System.out.println("비밀번호 찾기를 원하시면 클릭해 주세요.");
 			throw new LoginException("로그인 예외가 발생하였습니다.", e);
+			//catch문을 작성할때도 뒤에 파라미터들을 받아오면 사용가능
 			
 		}finally {
 			increaseCount();
@@ -110,21 +116,17 @@ class User4{
 	}
 }
 
+//그룹으로 처리하고
 class LoginException extends Exception{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
+	
+//담겨져있는 예외들의 인스턴스를 파라미터로 받아온다.
 	public LoginException(String message, Exception e) {
 		super(message, e);
 	}
 }
 
 class IDMismatchException4 extends Exception {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public IDMismatchException4(String message) {
@@ -133,9 +135,6 @@ class IDMismatchException4 extends Exception {
 }
 
 class PasswordMismatchException4 extends Exception {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public PasswordMismatchException4(String message) {

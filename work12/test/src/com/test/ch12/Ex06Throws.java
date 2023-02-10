@@ -117,9 +117,6 @@ class User2{
 }
 
 class IDMismatchException2 extends Exception{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public IDMismatchException2(String message) {
@@ -128,9 +125,6 @@ class IDMismatchException2 extends Exception{
 }
 
 class  PasswordMismatchException2 extends Exception {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	public  PasswordMismatchException2(String message) {

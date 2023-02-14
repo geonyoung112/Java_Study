@@ -8,18 +8,16 @@ public class Ex09_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		try3();
-	}
-	
-	public static void try3() {
-		try(Scanner scanner = new Scanner(new File("./src/com/test/ch12/input.txt"))){
-			System.out.println(scanner.nextLine());
-			
-		}catch(FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
+		
+			try(Scanner scanner = new Scanner(new File("input.txt"))){
+				System.out.println(scanner.nextLine());
+				
+			}catch(FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		
 
+	}
 }
 
 /*

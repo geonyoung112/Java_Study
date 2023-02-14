@@ -38,7 +38,7 @@ public class Ex09TryWithResources {
 		BufferedReader br = null;
 		
 		try {
-			fr = new FileReader("./src/com/test/ch12//Ex01TryCatch.java");
+			fr = new FileReader("./src/com/test/ch12/Ex01TryCatch.java");
 			br = new BufferedReader(fr);
 			
 			int data;

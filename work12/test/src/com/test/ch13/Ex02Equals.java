@@ -32,7 +32,7 @@ public class Ex02Equals {
 		System.out.println(b5.equals(b6));
 		System.out.println();
 		
-		String s1 = new String ("안녕히세요.");
+		String s1 = new String ("안녕하세요.");
 		String s2 = new String ("안녕하세요.");
 		
 		System.out.println(s1 == s2);

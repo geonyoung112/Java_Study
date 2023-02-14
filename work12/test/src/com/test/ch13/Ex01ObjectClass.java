@@ -2,6 +2,7 @@ package com.test.ch13;
 
 public class Ex01ObjectClass {
 
+	//모든 자식들의 부모 = Object Class
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Object o = null;

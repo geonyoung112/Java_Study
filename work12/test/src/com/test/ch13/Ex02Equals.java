@@ -36,8 +36,13 @@ public class Ex02Equals {
 		String s2 = new String ("안녕하세요.");
 		
 		System.out.println(s1 == s2);
-		System.out.println(s1.equals(s2));
+		System.out.println(s1.equals(s2)); //문자열 비교시엔 equals를 사용하기
 				
+		
+		/*
+		 * equals 메소드는 비교하고자 하는 대상의 내용 자체를 비교하지만,
+		 * == 연산자는 비교하고자 하는 대상의 주소값을 비교합니다.
+		*/
 
 	}
 
@@ -53,7 +58,8 @@ class Book3 {
 		this.author = author;
 		this.edition = edition;
 	}
-	
+	//그냥 여기서 equals를 사용한다면 인스턴스 변수들이 같더라도 false로 반환한다.
+	//각 인스턴스가 가지는 변수의 주소 값이 다르기 때문에 변수의 내용이 같더라도 다르다고 false 결과 값이 나온다.
 	@Override
 	public String toString() {
 		return "Book3[title= " + title + ", author=" + author + ", edition = " + edition + "]";
@@ -74,9 +80,10 @@ class Book4{
 	@Override
 	public boolean equals(Object obj) {
 		if(!(obj instanceof Book4))
-			return false;
-		Book4 book = (Book4)obj;
+			return false; //형변화이 가능한지 확인하는 코드: 불가하다면 false 값을 반환
+		Book4 book = (Book4)obj;//다운캐스팅을 한 후 
 		
+		//object의 equals를 이용해 각 인스터스 변수들의 값이 같을때 true를 반환하도록한다.
 		return title.equals(book.title) && author.equals(book.author) && edition == book.edition;
 	}
 	

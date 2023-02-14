@@ -73,6 +73,8 @@ class Book6 {
 	@Override 
 	public int hashCode() {
 		return Objects.hash(author, title);
+		
+		//오버라이딩해서 파라미터를 비교해 도출하는 해쉬코드는 파라미터가 모두 같다면 같을 수 있지만, 이는 임시로 같게 도출한 것 뿐이라 고유의 해쉬는 다르다
 	}
 }
 

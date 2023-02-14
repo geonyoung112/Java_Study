@@ -10,7 +10,7 @@ public class Ex01ObjectClass {
 		
 		System.out.println("---");
 		
-		Book b1 = new Book();
+		Book b1 = new Book("엘컴", "자바");
 		System.out.println(b1.toString());
 		
 		System.out.println("---");
@@ -34,6 +34,16 @@ public class Ex01ObjectClass {
 class Book {
 	private String title;
 	private String author;
+	
+	public Book(String title, String author) {
+		this.title = title;
+		this.author = author;
+	}
+	
+	@Override
+	public String toString() {
+		return "제목: " + title + ", 저자: " + author;
+	}
 }
 
 class Book2{
@@ -51,6 +61,16 @@ class Book2{
 	}
 	
 	public static void print(Object o) {
-		//System.out.println("제목: " + o.title + ", 저자: " + o.author);
+		Book2 b = (Book2)o;
+		System.out.println("제목: " + b.title + ", 저자: " + b.author );
 	}
 }
+
+
+/*
+문제 1.
+print 메소드의 주석 처리된 부분을 수정하여 오류 없이 출력하도록 수정하세요.
+힌트) 다운캐스팅을 사용하세요.
+문제 2.
+Book 클래스에 toString 메소드를 오버라이딩 하여 해시코드가 아닌 인스턴스 변수의 내용이 출력되도록 코딩하세요.
+*/

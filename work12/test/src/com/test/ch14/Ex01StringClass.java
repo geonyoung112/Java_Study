@@ -4,7 +4,7 @@ public class Ex01StringClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s1 = "엘컴퓨터학원";
+		String s1 = "엘컴퓨터학원";				// String 리터럴
 		String s2 = "엘컴퓨터학원";
 		
 		System.out.println(System.identityHashCode(s1));
@@ -31,6 +31,7 @@ public class Ex01StringClass {
 		System.out.println();
 		
 		String s5 = null;
+		//System.out.println(s5.length());
 		String s6 = "";
 		System.out.println(s6.length());
 		

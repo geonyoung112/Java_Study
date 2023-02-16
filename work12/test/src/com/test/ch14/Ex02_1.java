@@ -30,6 +30,7 @@ public class Ex02_1 {
 			count++;
 			
 		}
+		
 		System.out.println("공백의 수: " + count);
 
 	}

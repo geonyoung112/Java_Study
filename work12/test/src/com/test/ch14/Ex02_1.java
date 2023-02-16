@@ -24,7 +24,7 @@ public class Ex02_1 {
 		System.out.println(result);
 		
 		//2. 공백의 수 
-		//1의 결과값을 이용하고 타겟으로 공백을 설정 후 연산자 우선수위로 인해 () 작성하기
+		//1의 결과값을 이용하고 타겟으로 공백을 설정, 연산자 우선수위로 인해 () 작성하기
 		while((pos = result.indexOf(target, pos)) != -1) { 
 			pos += target.length();
 			count++;

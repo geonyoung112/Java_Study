@@ -18,12 +18,10 @@ public class Ex02_1 {
 		System.out.println(c3);
 		System.out.println(c2.equals(c3));
 		
-		
-		
-
 	}
 
 }
+
 class Car{
 	private String name;
 	private int price;
@@ -32,6 +30,7 @@ class Car{
 		this.name = name;
 		this.price = price;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if(!(obj instanceof Car))

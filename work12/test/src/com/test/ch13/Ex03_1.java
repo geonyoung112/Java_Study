@@ -18,7 +18,6 @@ public class Ex03_1 {
 		System.out.println(System.identityHashCode(p2));
 		System.out.println(p2.hashCode());
 		
-
 	}
 
 }

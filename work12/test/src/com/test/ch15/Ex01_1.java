@@ -12,15 +12,17 @@ public class Ex01_1 {
 		Integer intgB = Integer.valueOf(b);
 		
 		//2.
-		int result1 = Integer.sum(intgA, intgB);
-		System.out.println("더하기 결과:" + result1);
+		Integer result1 = Integer.sum(intgA.intValue(), intgB.intValue());
+		System.out.println("더하기 결과:" + result1.intValue());
+		
+		/* 결과를 int로 변환하기 위해선 intValue()로 변환시켜주면 된다.
+		Integer intgC = Integer.valueOf(intgA.intValue() + intgB.intValue());
+		System.out.println(intgC.intValue());
+		*/
+		
 		
 		//3.
-		int result2 = intgA.compareTo(intgB);
-		if(result2>0) {
-			System.out.println("비교 결과: " + intgA);
-		}
-		System.out.println("비교 결과: " + intgB);
+		System.out.println("비교값: " + (intgA.compareTo(intgB)>0? intgA: intgB));
 		
 		//4.
 		System.out.println("최대: " + Integer.max(intgA, intgB));
@@ -30,6 +32,7 @@ public class Ex01_1 {
 	}
 
 }
+
 /*
 문제 1.
 int a = 3;

@@ -4,6 +4,28 @@ public class Ex01_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//1.
+		int a = 3;
+		int b = 7;
+		Integer intgA = Integer.valueOf(a);
+		Integer intgB = Integer.valueOf(b);
+		
+		//2.
+		int result1 = Integer.sum(intgA, intgB);
+		System.out.println("더하기 결과:" + result1);
+		
+		//3.
+		int result2 = intgA.compareTo(intgB);
+		if(result2>0) {
+			System.out.println("비교 결과: " + intgA);
+		}
+		System.out.println("비교 결과: " + intgB);
+		
+		//4.
+		System.out.println("최대: " + Integer.max(intgA, intgB));
+		System.out.println("최소: " + Integer.min(intgA, intgB));
+		
 
 	}
 

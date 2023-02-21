@@ -7,14 +7,14 @@ public class Ex02_1 {
 		Integer intgA = Integer.valueOf(3);
 		System.out.println(intgA.intValue());
 		
-		System.out.println("+");
+
 		
 		Integer intgB = Integer.valueOf(7);
 		System.out.println(intgB.intValue());
 		
 		
-		Integer intgC = Integer.valueOf(intgA.intValue() + intgB.intValue());
-		System.out.println("= " + intgC.intValue());
+		Integer intgSum = Integer.valueOf(intgA.intValue() + intgB.intValue());
+		System.out.println("Sum: " + intgSum.intValue());
 	}
 
 }

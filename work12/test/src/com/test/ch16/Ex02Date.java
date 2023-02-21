@@ -26,6 +26,7 @@ public class Ex02Date {
 		System.out.print("yyyy년MM월dd일 패턴으로 날짜를 입력해 주세요: ");
 		String strDate = scan.nextLine();
 		try {
+			// parse는 문자열 -> Date 
 			inputDate = sdf2.parse(strDate);
 		} catch(ParseException e) {
 			e.printStackTrace();

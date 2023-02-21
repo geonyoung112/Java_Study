@@ -1,5 +1,6 @@
 package com.test.ch16;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,9 +25,13 @@ public class Ex02_1 {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-
-		System.out.println(sdf2.format(inputDate));
-		System.out.println();
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(inputDate);
+		cal.add(Calendar.MONTH, 1);
+		Date inputDate2 = cal.getTime();
+		
+		System.out.println(sdf2.format(inputDate2));
 
 	}
 

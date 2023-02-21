@@ -1,6 +1,7 @@
 package com.test.ch16;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -18,14 +19,17 @@ public class Ex03_1 {
 		System.out.println(p.getYears() + "년 " + p.getMonths() + "개월 " + p.getDays() + "일");
 		System.out.println();
 		
+		//2.
 		DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy년MM월dd일");
 		DateTimeFormatter df2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		Scanner s = new Scanner(System.in);
 		System.out.print("yyyy년MM월dd일 패턴으로 날짜를 입력해 주세요: ");
 		String inputDate = s.nextLine();
 		
-	
-		
+		LocalDate date3 = LocalDate.parse(inputDate,df);	 //parse
+		LocalDateTime datetime4 = date3.atStartOfDay(); 	//로컬데이트타임을 이용해 시분초 표현하기
+		datetime4 = date3.atTime(11, 50, 01); 				//원하는대로 시분초 입력
+		System.out.println(df2.format(datetime4.plusMonths(1))); 	//1달 더해서 원하는 포맷으로 표현해주기
 
 	}
 

@@ -20,7 +20,7 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 import static java.time.temporal.ChronoUnit.MILLIS;
 import static java.time.temporal.ChronoUnit.NANOS;
 
-
+//필요할 때 찾아서 사용하면서 암기하고 익숙해지
 public class Ex03LocalDate {
 
 	public static void main(String[] args) {
@@ -45,6 +45,7 @@ public class Ex03LocalDate {
 		System.out.println(date1.until(date2, DAYS));
 		System.out.println();
 		
+		//년월일 간격 구하는 메소드
 		System.out.println("Period java.time.LocalDate.until(ChronoLocalDate d");
 		Period p = date1.until(date2);
 		System.out.println(p.getYears() + "년" + p.getMonths() + "개월" + p.getDays() + "일");
@@ -119,8 +120,9 @@ public class Ex03LocalDate {
 		System.out.println(time1.until(time2, NANOS));
 		System.out.println();
 		
+		//시분초 간격 구하는 메소드
 		System.out.println("Duration java.time.Duration.between(Temporal t1, Temporal t2)");
-		Duration d = Duration.between(time1, time2);
+		Duration d = Duration.between(time1, time2);	
 		System.out.println(d.getSeconds());
 		System.out.println(d.getNano());
 		System.out.println();

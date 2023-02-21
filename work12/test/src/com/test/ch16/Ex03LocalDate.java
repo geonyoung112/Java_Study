@@ -20,6 +20,7 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 import static java.time.temporal.ChronoUnit.MILLIS;
 import static java.time.temporal.ChronoUnit.NANOS;
 
+//요즘 사용하는 날짜, 시분초 사용법_기능이 더 간단하고 사용하기 편하다.
 //필요할 때 찾아서 사용하면서 암기하고 익숙해지기
 public class Ex03LocalDate {
 

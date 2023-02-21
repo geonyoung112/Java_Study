@@ -20,7 +20,7 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 import static java.time.temporal.ChronoUnit.MILLIS;
 import static java.time.temporal.ChronoUnit.NANOS;
 
-//필요할 때 찾아서 사용하면서 암기하고 익숙해지
+//필요할 때 찾아서 사용하면서 암기하고 익숙해지기
 public class Ex03LocalDate {
 
 	public static void main(String[] args) {

@@ -65,10 +65,10 @@ public class Ex01Calendar {
 		long diffYear = diffMilli / (365L * 24 * 60 * 60 * 1000);	// 년
 		System.out.println(diffYear + " 년");
 		System.out.println();
-		
 		System.out.println(diffDay / 365 + "년 ");
 		System.out.println(diffDay % 365 + " 일 차이");
 		System.out.println();
+		
 		
 		Calendar today = Calendar.getInstance();
 		System.out.println(today.getTime().toString());

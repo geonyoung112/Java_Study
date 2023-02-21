@@ -9,17 +9,17 @@ public class Ex01_1 {
 		Calendar start = Calendar.getInstance();
 		start.set(2000, 12, 1, 0, 0, 0);
 		Calendar end = Calendar.getInstance();
-		end.set(2030, 9, 7, 0, 0, 0);
+		end.set(2020, 9, 7, 0, 0, 0);
 		
 		System.out.println(start.getTime());
 		System.out.println(end.getTime());
 		System.out.println();
 		
 		
-		long diffMilli = end.getTimeInMillis() - start.getTimeInMillis();		// 밀리세컨즈
-		long diffDay = diffMilli / (24 * 60 * 60 * 1000);	// 일
+		long diffMilli1 = end.getTimeInMillis() - start.getTimeInMillis();
+		long diffDay1 = diffMilli1 / (24 * 60 * 60 * 1000);	
 		
-		System.out.println("두 날짜 간의 차이: " + diffDay / 365 + "년 "  + diffDay % 365 + " 일 차이");
+		System.out.println("두 날짜 간의 차이: " + diffDay1 / 365 + "년 "  + diffDay1 % 365 + " 일 차이");
 		
 	}
 

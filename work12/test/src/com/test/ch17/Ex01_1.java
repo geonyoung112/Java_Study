@@ -9,25 +9,38 @@ public class Ex01_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Book1 b1 = new Book1("자바1", "엘컴퓨터학원");
-		Book1 b2 = new Book1("자바2", "엘컴퓨터학원");
-		Book1 b3 = new Book1("자바3", "엘컴퓨터학원");
-		Book1 b4 = new Book1("자바4", "엘컴퓨터학원");
-		Book1[] arrBook = new Book1[10];
-		List<Book1> books2 = new ArrayList<Book1>(Arrays.asList(arrBook));
-		System.out.println(books2.toString());
-
+		
+		Book21[] arrBook = {
+							new Book21("자바1", "엘컴퓨터학원"),
+							new Book21("자바2", "엘컴"),
+							new Book21("자바3", "엘컴"),
+							new Book21("자바4", "엘컴퓨터학원"),
+							new Book21("자바5", "엘컴퓨터학원"),
+							new Book21("자바6", "엘컴"),
+							new Book21("자바7", "엘컴"),
+							new Book21("자바8", "엘컴퓨터학원"),
+							new Book21("자바9", "엘컴퓨터학원"),
+							new Book21("자바10", "엘컴퓨터학원"),
+							
+		};
+		
+		List<Book21> books2 = new ArrayList<Book21>(Arrays.asList(arrBook));
+		Book21.printAllBooksWithForEach(books2);
+		System.out.println();
+		Book21.removeWithForEach(books2);
+		
+	
 			
 
 	}
 
 }
 
-class Book1 {
+class Book21 {
 	private String title;
 	private String author;
 	
-	public Book1(String title, String author) {
+	public Book21(String title, String author) {
 		this.title = title;
 		this.author = author;
 	}
@@ -42,48 +55,22 @@ class Book1 {
 	public String toString() {
 		return "Book[title=" + title + ", author=" + author + "]";
 	}
-}
-
-class Cart1 {
-	private List<Book1> books1;
 	
-	public Cart1() {
-		books1 = new ArrayList<Book1>(10);
-	}
-	public void add(Book1 book) {
-		books1.add(book);
-	}
-	public void add(int index, Book1 book) {
-		books1.add(index, book);
-	}
-	public boolean checkForDuplicateBook(Book1 book) {
-		return books1.contains(book);
-	}
-	public List<Book1> getAllBooks() {
-		return books1;
-	}
-	public Book1 getBook(int index) {
-		return books1.get(index);
-	}
-	
-	public static void printAllBooksWithForEach(List<Book1> books1) {
-		System.out.println("foreach");
-		for (Book1 book : books1) {		// 바이트 코드 변환 시 보일러 플레이트 최소화
+	public static void printAllBooksWithForEach(List<Book21> books) {
+		for (Book21 book : books) {		// 바이트 코드 변환 시 보일러 플레이트 최소화
 			System.out.println(book);
 		}
 	}
 	
-	public static void removeWithForEach(List<Book1> books1) { 
+	public static void removeWithForEach(List<Book21> books) { 
 		try {
-			for (Book1 book : books1) {		// Iterable
-				books1.remove(book);
-				System.out.println("삭제: " + book);
+			for (Book21 book : books) {		
+				books.remove(book);
+				System.out.println("삭제:" + book);
 			}
 		} catch (ConcurrentModificationException e) {
 			System.out.println("Iterable은 삭제 기능을 지원하지 않습니다.\n");
 		}
-		
-		System.out.println(books1.toString());
 	}
 	
 }

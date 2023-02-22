@@ -6,7 +6,9 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-
+//가변적으로 배열의 길이가 변화 가능하다
+//ArrayList = 검색에 용이
+//LinkedList = 수정 삭제 검색에 용이
 public class Ex01List {
 
 	public static void main(String[] args) {
@@ -84,7 +86,8 @@ class Book {
 }
 
 class Cart {
-	private List<Book> books;
+	private List<Book> books; 
+	//ArrayList가 아닌 List로 작성되는 이유: 어레이 뿐만 아니라 사용자편에서 다른 리스트를 사용하더라도 받아올 수 있음
 	
 	public Cart() {
 		books = new ArrayList<Book>(2);
@@ -114,14 +117,14 @@ class Cart {
 	}
 	
 	public static void printAllBooksWithIterator(List<Book> books) {
-		System.out.println("Iterator");
+		System.out.println("Iterator"); //삭제가 가능, 뒤로만 이동가눙
 		for (Iterator<Book> it = books.iterator(); it.hasNext(); ) {
 			System.out.println(it.next());
 		}
 	}
 	
 	public static void printAllBooksWithListIterator(List<Book> books) {
-		System.out.println("ListIterator");
+		System.out.println("ListIterator"); //앞으로 뒤로 다 이동가능
 		System.out.println("next");
 		ListIterator<Book> it = books.listIterator();
 		
@@ -138,13 +141,13 @@ class Cart {
 	public static void printAllBooksWithForEach(List<Book> books) {
 		System.out.println("foreach");
 		for (Book book : books) {		// 바이트 코드 변환 시 보일러 플레이트 최소화
-			System.out.println(book);
+			System.out.println(book);	//읽기 전용, 삭제가 불가능
 		}
 	}
 	
 	public static void removeWithForEach(List<Book> books) { 
 		try {
-			for (Book book : books) {		// Iterable
+			for (Book book : books) {		// Iterable: 읽기 전용
 				books.remove(book);
 				System.out.println("삭제: " + book);
 			}

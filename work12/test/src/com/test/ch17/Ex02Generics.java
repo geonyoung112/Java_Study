@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// <> 괄호 안에 들어가는 타입을 지정
+//다운캐스팅, 업캐스팅이 필요없음
+/*
+ * 1. 제네릭을 사용하면 잘못된 타입이 들어올 수 있는 것을 컴파일 단계에서 방지할 수 있다.
+ * 2. 클래스 외부에서 타입을 지정해주기 때문에 따로 타입을 체크하고 변환해줄 필요가 없다. 즉, 관리하기가 편하다.
+ * 3. 비슷한 기능을 지원하는 경우 코드의 재사용성이 높아진다.
+ * T: type, E: element, K: key, V: value, N:number
+ */
 public class Ex02Generics {
 
 	public static void main(String[] args) {

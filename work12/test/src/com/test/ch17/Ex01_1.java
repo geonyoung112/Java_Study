@@ -25,9 +25,9 @@ public class Ex01_1 {
 		};
 		
 		List<Book21> books2 = new ArrayList<Book21>(Arrays.asList(arrBook));
-		Book21.printAllBooksWithForEach(books2);
+		Cart21.printAllBooksWithForEach(books2);
 		System.out.println();
-		Book21.removeWithForEach(books2);
+		Cart21.removeWithForEach(books2);
 		
 	
 			
@@ -55,6 +55,14 @@ class Book21 {
 	public String toString() {
 		return "Book[title=" + title + ", author=" + author + "]";
 	}
+}
+
+class Cart21{
+	private List<Book21> books; 
+	
+	public Cart21() {
+		books = new ArrayList<Book21>(10);
+	}
 	
 	public static void printAllBooksWithForEach(List<Book21> books) {
 		for (Book21 book : books) {		// 바이트 코드 변환 시 보일러 플레이트 최소화
@@ -70,9 +78,8 @@ class Book21 {
 			}
 		} catch (ConcurrentModificationException e) {
 			System.out.println("Iterable은 삭제 기능을 지원하지 않습니다.\n");
-		}
+			}
 	}
-	
 }
 /*
 문제 1.

@@ -3,6 +3,7 @@ package com.test.ch17;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
 
 public class Ex01_1 {
@@ -27,7 +28,14 @@ public class Ex01_1 {
 		List<Book21> books2 = new ArrayList<Book21>(Arrays.asList(arrBook));
 		Cart21.printAllBooksWithForEach(books2);
 		System.out.println();
+		
 		Cart21.removeWithForEach(books2);
+		Cart21.removeWithIterator(books2);
+		System.out.println();
+		
+		Cart21.printAllBooksWithForEach(books2);
+		
+		
 		
 	
 			
@@ -80,6 +88,19 @@ class Cart21{
 			System.out.println("Iterable은 삭제 기능을 지원하지 않습니다.\n");
 			}
 	}
+	
+	
+	public static void removeWithIterator(List<Book21> books) {
+	
+		for (Iterator<Book21> it = books.iterator(); it.hasNext(); ) {
+			Book21 book = it.next();
+			if(book.getAuthor().equals("엘컴퓨터학원")){ //equals 사용하는 방법
+				it.remove();	
+			}
+		}
+		System.out.println("삭제: " + books);//밖에서 리스트 불러오기
+	}
+
 }
 /*
 문제 1.

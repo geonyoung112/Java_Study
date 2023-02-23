@@ -10,12 +10,10 @@ public class Ex02_1 {
 		// TODO Auto-generated method stub
 		Pen p1 = new Pen("연필1", 2000);
 		Pen p2 = new Pen("연필2", 3000);
-		Pen p3 = new Pen("연필3", 4000);
 		
 		Box<Pen> box = new Box<Pen>();
 		box.add(p1);
 		box.add(p2);
-		box.add(p3);
 		box.printAllItems();
 		System.out.println();
 		

@@ -46,6 +46,26 @@ public class Ex04Generics {
 		// bs.printList1(bList);	// error
 		service.printList2(pList);
 		service.printList3(pList);
+		
+		Diary d1 = new Diary();
+		d1.setTitle("다이어리1 제목");
+		d1.setContent("다리어리1 내용");
+		d1.setDiary("다이어리 내용입니다.");
+		
+		Diary d2 = new Diary();
+		d2.setTitle("다이어리2 제목");
+		d2.setContent("다이어리2 내용");
+		d2.setDiary("다이어리 내용입니다.");
+		
+		List<Diary> dList = new ArrayList<Diary>();
+		dList.add(d1);
+		dList.add(d2);
+		
+		service = new DiaryService();
+		// bs.printList1(bList);	// error
+		service.printList2(dList);
+		service.printList3(dList);
+
 
 	}
 
@@ -53,7 +73,7 @@ public class Ex04Generics {
 
 interface BoardDefaultService{
 	
-	public default void printList1(List<Object> boardList) {		// only List<Object>
+	public default void printList1(List<Object> boardList) {		// only List<Object>, 호출할때도 받아오는 <>안이 같아야한다는 소리
 		System.out.println("printList1");
 		for(Object obj : boardList) {
 			System.out.println(obj.toString());
@@ -97,13 +117,31 @@ class PhotoService implements BoardDefaultService {
 	public void printList3(List<?> photoList) {
 		System.out.println("printList3");
 		for (Object obj : photoList) {
-			if(!(obj instanceof Photo))return;
+			if(!(obj instanceof Photo))return; //유효성 검사: 가능하지, 불가능한지
 			
 			Photo photo = (Photo)obj;
 			
 			System.out.println(photo.getTitle());
 			System.out.println(photo.getContent());
 			System.out.println(photo.getPhoto());
+			System.out.println("-----");
+		}
+		System.out.println();
+	}
+}
+
+class DiaryService implements BoardDefaultService {
+	@Override 
+	public void printList3(List<?> diaryList) {
+		System.out.println("printList3");
+		for (Object obj : diaryList) {
+			if(!(obj instanceof Diary))return;
+			
+			Diary diary = (Diary)obj;
+			
+			System.out.println(diary.getTitle());
+			System.out.println(diary.getContent());
+			System.out.println(diary.getDiary());
 			System.out.println("-----");
 		}
 		System.out.println();
@@ -144,6 +182,21 @@ class Photo extends Board {
 	@Override
 	public String toString() {
 		return "Photo [title=" + getTitle() + ", content=" + getContent() + "photo=" + photo + "]";
+	}
+}
+
+class Diary extends Board {
+	private String diary;
+	
+	public String getDiary() {
+		return diary;
+	}
+	public void setDiary(String diary) {
+		this.diary = diary;
+	}
+	@Override
+	public String toString() {
+		return "Diary [title =" + getTitle() + ", content=" +getContent() + "diary=" + diary + "]";
 	}
 }
 

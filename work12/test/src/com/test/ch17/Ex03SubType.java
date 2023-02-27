@@ -1,10 +1,10 @@
 package com.test.ch17;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
-//구들 검색 후 주석달기
 public class Ex03SubType {
 
 	public static void main(String[] args) {
@@ -19,22 +19,27 @@ public class Ex03SubType {
 						
 				Player.addRecommendedContent(musicList);
 				Player.play(musicList);
+				Player.removeList(musicList);//마지막요소 제거
 				
 				List<Content> contents = new ArrayList<Content>();
 				contents.add(new Music("노래3"));
 				contents.add(new Music("노래4"));
 				
+				
+				Player.play(contents);
+				Player.addRecommendedContent(contents);
+				Collections.reverse(contents);
 				Player.play(contents);
 				
-				Player.addRecommendedContent(contents);
-				Player.play(contents);
+				
+				
 				
 				List<Movie> movieList = new ArrayList<Movie>();
 				movieList.add(new Movie("영화1"));
 				movieList.add(new Movie("영화2"));
+
 				
 				Player.play(movieList);
-				
 				//Player.addRecommendedContent(movieList);	// error (1)
 				//Player.play(movieList);
 				
@@ -92,7 +97,22 @@ class Player {
 		System.out.println(content.getTitle());
 		System.out.println();
 	}
+	
+	
+
+	public static void removeList(List<? super Music> musicList) {
+		System.out.println("Before");
+		System.out.println(musicList);
+
+		
+		musicList.remove(musicList.size()-1); //마지막 요소 제거하는 메소드
+		System.out.println("After");
+		System.out.println(musicList);
+		System.out.println();
+	}
+
 }
+
 
 interface Content {
 	public abstract String getTitle();
@@ -160,6 +180,12 @@ class Music implements Content {
 	public void setLyricist(String lyricist) {
 		this.lyricist = lyricist;
 	}
+
+	@Override
+	public String toString() {
+		return "Music [songTitle=" + songTitle +  "]";
+	}
+	// 자동 toSring 메소드 생성: 소스 - generate toString
 }
 
 /*

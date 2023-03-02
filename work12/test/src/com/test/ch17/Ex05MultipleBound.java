@@ -31,12 +31,11 @@ public class Ex05MultipleBound {
 		c2.setModelName("아반떼");
 		c2.setDoor(2);
 		
-		/* (1)
-		Store<Car2> carStore = new Store<>();	// error
+		
+		Store<Car2> carStore = new Store<>();
 		
 		Rank<Book3, Car2> rank = new Rank<>();
 		rank.setProducts(bookStore.getProducts(), carStore.getProducts());
-		*/
 
 	}
 
@@ -106,9 +105,10 @@ class Book3 extends Product implements OrderItem {
 	}
 }
 
-class Car2 extends Product {
+class Car2 extends Product  implements OrderItem{
 	private String modelName;
 	private int door;
+	private int price;
 	
 	public String getModelName() {
 		return modelName;
@@ -126,6 +126,15 @@ class Car2 extends Product {
 	public String toString() {
 		return "Car2 [modelName=" + modelName + ", door=" + door + "]";
 	}
+	
+	@Override 
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	@Override
+	public int getPrice() {
+		return price;
+	}
 }
 
 class Rank<T, U> {
@@ -138,7 +147,7 @@ class Rank<T, U> {
 		
 		System.out.println("- lst -");
 		for(T first : fList) {
-			System.out.println();
+			System.out.println(first);
 		}
 		System.out.println("- 2nd -");
 		for(U second : sList) {
@@ -146,6 +155,7 @@ class Rank<T, U> {
 		}
 	}
 }
+
 
 /*
 문제 1.

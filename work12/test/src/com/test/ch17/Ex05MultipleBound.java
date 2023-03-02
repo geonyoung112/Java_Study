@@ -31,8 +31,12 @@ public class Ex05MultipleBound {
 		c2.setModelName("아반떼");
 		c2.setDoor(2);
 		
-		
+		//(1)
 		Store<Car2> carStore = new Store<>();
+		carStore.add(c1);
+		carStore.add(c2);
+		
+		carStore.printProducts();
 		
 		Rank<Book3, Car2> rank = new Rank<>();
 		rank.setProducts(bookStore.getProducts(), carStore.getProducts());

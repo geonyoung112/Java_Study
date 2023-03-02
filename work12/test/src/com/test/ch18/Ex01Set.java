@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+//set은 자동으로 중복을 제거함
 public class Ex01Set {
 
 	public static void main(String[] args) {
@@ -61,6 +62,7 @@ public class Ex01Set {
 
 	}
 	
+	//set, list를 쓸지 결정x라면 콜렉션을 받아오기(가장 위에 있는 부모)
 	public static void print(Collection<Integer> c) {
 		for(Integer i : c) 
 			System.out.println(i + ", ");

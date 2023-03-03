@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
+//Set은 중복은 제거하지만 정렬은 하지 못한다.
+//그래서 Set을 List로 다시 바꿔줘야 한다.
+
 public class Ex02Set {
 
 	public static void main(String[] args) {
@@ -62,9 +66,9 @@ class Course {
 	private Set<String> subjects;
 	private List<Student> students;
 	
-	public void setStudents(Student... arrStudent) {
+	public void setStudents(Student... arrStudent) { //가변인자로 학생을 받아오기
 		students = new ArrayList<>();
-		Collections.addAll(students, arrStudent);
+		Collections.addAll(students, arrStudent); //배열처럼 받아옴
 	}
 	
 	public List<Student> getStudents() {
@@ -72,7 +76,7 @@ class Course {
 	}
 	
 	public void setSubjects(String[] arrSubjects) {
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<>(); //모든 과목을 불러오면서 셋으로 중복을 제거
 		Collections.addAll(list, arrSubjects);
 		subjects = new HashSet<>(list);
 	}
@@ -83,14 +87,14 @@ class Course {
 	
 	public List<String> getOrderedSubjects() {
 		List<String> oSubjects = new ArrayList<>(subjects);
-		Collections.sort(oSubjects);
+		Collections.sort(oSubjects); //셋을 다시 리스트로 바꿔서 오름차순으로 정렬
 		return oSubjects;
 	}
 	
 	public Set<String> getRegisteredSubjects() {
 		Set<String> rSubjects = new HashSet<>();
 		for (Student student : students) {
-			rSubjects.addAll(student.getSubjects());
+			rSubjects.addAll(student.getSubjects()); //학생들의 중복없이 모든 과목을 불러옴  
 		}
 		return rSubjects;
 	}
@@ -100,24 +104,25 @@ class Course {
 		for (Student student : students) {
 			if (subjects == null)
 				subjects = new HashSet<>(student.getSubjects());
-			subjects.retainAll(student.getSubjects());
+			subjects.retainAll(student.getSubjects()); //공통으로 듣는 과목만 불러옴
+			//처음 학생의 과목을 눌로 정의하고 첫 학생의 과목과 두번째 학생의 과목을 비교해서 같은 것만 남김 
 		}
 		
 		return subjects;
 	}
 	
 	public Set<String> getCanceledSubjects() {
-		Set<String> allSubjects = new HashSet<>(subjects);
-		Set<String> rSubjects = getRegisteredSubjects();
+		Set<String> allSubjects = new HashSet<>(subjects);//중복없는 모든 과목
+		Set<String> rSubjects = getRegisteredSubjects();//교집합 과목
 		
-		allSubjects.removeAll(rSubjects);
+		allSubjects.removeAll(rSubjects);//뺀다
 		
-		return allSubjects;
+		return allSubjects;//남는 것이 여집합 과목
 	}
 	
 	public static void print(Collection<String> subjects) {
 		for (String subject : subjects) {
-			System.out.print(subject + ", ");
+			System.out.print(subject + ", "); //하나씩 불러와서 프린트 메소드
 		}
 		System.out.println("\n");
 	}

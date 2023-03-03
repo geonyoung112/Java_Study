@@ -221,7 +221,7 @@ private final static int num = 500000;	// 실행 속도가 느릴 경우 숫자�
 		printTime(books, time);
 		return time;
 	}
-	// 검색 foreach
+	// 검색 ForEach
 	public static long getBooksForEach(Collection<Integer> books) {
 		long startTime = System.currentTimeMillis();
 		for (Integer book : books) {

@@ -7,6 +7,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+//단순히 스트링으로 입력하는 것보다 자바는 객체지향 언어이기에
+//클래스화를 이용해 작성한다.
+//참고: http://www.tcpschool.com/java/java_collectionFramework_set
+
 public class Ex02_1 {
 
 	public static void main(String[] args) {

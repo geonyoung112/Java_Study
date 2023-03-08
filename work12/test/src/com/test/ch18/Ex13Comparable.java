@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Ex3Comparable {
+public class Ex13Comparable {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -46,7 +46,9 @@ class Book3 implements Comparable<Book3> {
 	@Override
 	public String toString() {
 		return "(" + no + ", " + title + ")";
+
 	}
+
 }
 
 /*

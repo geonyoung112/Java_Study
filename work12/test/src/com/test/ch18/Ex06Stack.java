@@ -34,10 +34,9 @@ public class Ex06Stack {
 		
 		
 		System.out.println("\n- 문제 풀이 결과 -");
-		book.setPage(0);
+		book.setPage(1);
 		book.nextButton();
-		System.out.println();
-		book.setPage(4);
+		book.setPage(5);
 		book.prevButton();
 		
 

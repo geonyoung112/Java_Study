@@ -31,6 +31,15 @@ public class Ex06Stack {
 		book.view();
 		book.prePage();
 		book.view();
+		
+		
+		System.out.println("\n- 문제 풀이 결과 -");
+		book.setPage(0);
+		book.nextButton();
+		System.out.println();
+		book.setPage(4);
+		book.prevButton();
+		
 
 	}
 
@@ -76,6 +85,26 @@ class Book {
 	public void setCurrentPageNo(int currentPageNo) {
 		this.currentPageNo = currentPageNo;
 	}
+	
+	
+	//문제1. 입력된 페이지로 설정되는 메세지
+	public void setPage(int pageNo) {
+	    pageStack.push(pageList.get(currentPageNo));
+	    currentPageNo = pageNo;
+	}
+
+	public void nextButton() {
+		System.out.println("다음 페이지로 이동하겠습니다.");
+	    setPage(currentPageNo + 1);
+	    view();
+	}
+
+	public void prevButton() {
+		System.out.println("이전 페이지로 이동하겠습니다.");
+	    setPage(currentPageNo - 1);
+	    view();
+	}
+
 }
 
 class Page {

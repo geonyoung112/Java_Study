@@ -31,7 +31,9 @@ class Printer {
 
 class PrintService implements Runnable {
 	//public static Queue<Paper> q = new LinkedList<>();	/Queue<E>로 인한 오류 발생
-	public static Queue<Paper> q = new ConcurrentLinkedQueue<>();
+	public static Queue<Paper> q = new ConcurrentLinkedQueue<>(); //멀티쓰레드를 사용할때는 콘커렌트링크드큐를 사용해야함
+	//하나의 인스턴스에서 2개의 쓰레드가 접근할 시 사용끝나기도 전에 값을 반환해 2번째 쓰레드의 값을 먼저가져온다든지 등 오류가 생김
+	// 쓰레드의 정확하게 순서를 할당해오는 지 모르기 때문에 그냥 링크드리스트는 금한다.
 	
 	@Override
 	public void run() {

@@ -3,7 +3,7 @@ package com.test.ch18;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-
+//스택처럼 사용하기
 public class Ex07_1 {
 
 	public static void main(String[] args) {

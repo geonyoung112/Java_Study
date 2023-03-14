@@ -27,20 +27,26 @@ public class Ex08Deque {
 		Restaurant2.printQueue();
 
 		System.out.println("< deque는 양방향으로 추가 및 삭제가 가능하므로 스택과 큐 모두 구현이 가능합니다. >");
+		System.out.println();
+		
 		QueueTicketDispenser2.takeNum();
 		QueueTicketDispenser2.takeNum();
 		QueueTicketDispenser2.takeNum();
 		Restaurant2.printQueue();
-
+		
+		//스택처럼 맨위에 올릴 수 있다.
 		Restaurant2.q.offerFirst(100);
 		Restaurant2.printQueue();
 		
+		//맨 마지막에 올린다.
 		Restaurant2.q.offerLast(200);
 		Restaurant2.printQueue();
 		
+		//가장 먼저 빼기
 		Restaurant2.q.pollFirst();
 		Restaurant2.printQueue();
 		
+		//가장 마지막 꺼 빼기
 		Restaurant2.q.pollLast();
 		Restaurant2.printQueue();
 

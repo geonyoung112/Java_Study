@@ -1,7 +1,7 @@
 package com.test.ch18;
 
+import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Ex08_1 {
@@ -9,7 +9,7 @@ public class Ex08_1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
-		Deque<String> messageinput = new LinkedList<>();
+		Deque<String> messageinput = new ArrayDeque<>();
 		
 		while(true) {
 			System.out.println("메세지를 입력하세요: ");
@@ -23,7 +23,7 @@ public class Ex08_1 {
 			messageinput.add(message);
 			
 			if(messageinput.size() > 3) {
-				messageinput.removeFirst();
+				messageinput.pop();
 				//3보다 커지면 먼저 입력된 값들을 지운다
 				//quit를 입력하면 종료되기 때문에 구현을 위해 break을 입력하지 않는다.
 			}

@@ -72,14 +72,14 @@ public class Ex09Three {
 		System.out.println(tvSet.lower(750));
 		System.out.println();
 		
-		System.out.println("< 제일 비싼 TV와 싼 TV 판매 >");
+		System.out.println("< 제일 싼 TV와 비싼 TV 판매 >");
 		System.out.println(tvSet.pollFirst());	
 		System.out.println(tvSet.pollLast());
 		
 		System.out.println("< 870원 TV 판매>");
 		System.out.println(tvSet.remove(870));
 		System.out.println("< 550원 TV 재고 없음>");
-		System.out.println(tvSet.remove(870));
+		System.out.println(tvSet.remove(550));
 		
 		System.out.println("< 판매중인 TV >");
 		for (Iterator<Integer> it = tvSet.iterator(); it.hasNext(); )

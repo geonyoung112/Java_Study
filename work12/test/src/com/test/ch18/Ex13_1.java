@@ -36,9 +36,9 @@ class Student2 implements Comparable<Student2> {
 	
 	@Override
 	public int compareTo(Student2 stu) {
-		int result = Integer.valueOf(no).compareTo(stu.getNo()); //*-1 내림차순
+		int result = Integer.valueOf(no).compareTo(stu.getNo()); //오름차순
 		if(result == 0)
-			result = name.compareTo(stu.name)* -1; //오름차순
+			result = name.compareTo(stu.name)* -1; //내림차순
 		return result;
 	}
 	@Override

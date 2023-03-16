@@ -38,9 +38,9 @@ class Book3 implements Comparable<Book3> {
 	}
 	@Override
 	public int compareTo(Book3 book) {
-		int result = Integer.valueOf(no).compareTo(book.getNo()) * -1;
+		int result = Integer.valueOf(no).compareTo(book.getNo()) * -1; //*-1 내림차순
 		if(result == 0)
-			result = title.compareTo(book.title);
+			result = title.compareTo(book.title); //오름차순
 		return result;
 	}
 	@Override

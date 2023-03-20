@@ -3,10 +3,10 @@ package com.test.ch19;
 import java.util.HashMap;
 import java.util.Map;
 
+//람다 표현식
 public class Ex02Lambda {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Map<String, User> allUsers = UserService.getUserMap();
 		Map<String, User> condUser = null;
 		
@@ -26,10 +26,10 @@ public class Ex02Lambda {
 		condUser = UserService.search(allUsers, u -> u.getId().startsWith("test"));
 		UserService.printUsers(condUser);
 		System.out.println();
-		
 	}
 
 }
+
 @FunctionalInterface
 interface Criteria {
 	public abstract boolean where(User user);
@@ -58,7 +58,7 @@ class UserService {
 	public static Map<String, User> search(Map<String, User>users, Criteria c) {
 		Map<String, User> condUsers = new HashMap<>();
 		
-		for(Map.Entry<String, User> entry : users.entrySet()) {
+		for (Map.Entry<String, User> entry : users.entrySet()) {
 			if (c.where(entry.getValue())) {
 				condUsers.put(entry.getKey(), entry.getValue());
 			}
@@ -76,12 +76,11 @@ class UserService {
 
 class User {
 	private String id;
-	private int age;
+	private int age;	
 	public User(String id, int age) {
 		this.id = id;
 		this.age = age;
 	}
-	
 	public String getId() {
 		return id;
 	}
@@ -93,6 +92,7 @@ class User {
 		return "id=" + id + ", age=" + age;
 	}
 }
+
 
 /*
 문제 1.

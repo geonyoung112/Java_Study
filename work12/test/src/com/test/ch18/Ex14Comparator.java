@@ -18,6 +18,7 @@ public class Ex14Comparator {
 		System.out.println();
 		
 		System.out.println("< 번호 내림차순 정렬, 제목 내림차순 정렬>");
+		//익명 클래스를 이용해서 Comparator을 구현 가능
 		Collections.sort(books, new Comparator<Book4>() {
 			@Override
 			public int compare(Book4 b1, Book4 b2) {

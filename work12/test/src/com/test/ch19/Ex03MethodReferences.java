@@ -36,9 +36,11 @@ public class Ex03MethodReferences {
 		
 		store.addAll(titles, Book::new, Book::validateLength);
 		Collections.sort(store.getItems(), Item::compareByTitleAsc);
+		Collections.sort(store.getItems(), Item::compareByTitleDesc);
+		//Collections.sort(store.getItems(), (item1, item2) -> Item.compareByTitleAsc(item1, item2));
 		
 		System.out.println("< '인스턴스::메소드' 방식으로 인스턴스 메소드 호출 >");
-		Runnable printItems = store :: forEach;
+		Runnable printItems = store::forEach;
 		printItems.run();
 		System.out.println();
 		
@@ -46,6 +48,8 @@ public class Ex03MethodReferences {
 		Consumer<Store> printItems2 = Store::forEach;
 		printItems2.accept(store);
 		System.out.println();
+		
+		
 
 	}
 
@@ -70,6 +74,7 @@ class Store {
 			System.out.println("[title]" + item.getTitle());
 		}
 	}
+	
 }
 
 interface Item {
@@ -77,6 +82,11 @@ interface Item {
 	
 	public static int compareByTitleAsc(Item item1, Item item2) {
 		return item1.getTitle().compareTo(item2.getTitle());
+	}
+	
+	//내림차순
+	public static int compareByTitleDesc(Item item1, Item item2) {
+		return item1.getTitle().compareTo(item2.getTitle())* -1;
 	}
 }
 

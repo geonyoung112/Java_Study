@@ -26,6 +26,10 @@ public class Ex02Lambda {
 		condUser = UserService.search(allUsers, u -> u.getId().startsWith("test"));
 		UserService.printUsers(condUser);
 		System.out.println();
+		
+		condUser = UserService.search(allUsers, u -> u.getLevel() >= 2);
+		UserService.printUsers(condUser);
+		System.out.println();
 	}
 
 }
@@ -40,11 +44,11 @@ class UserService {
 	
 	static {
 		userMap = new HashMap<>();
-		UserService.add("admin", new User("admin", 27));
-		UserService.add("test1", new User("test1", 30));
-		UserService.add("test2", new User("test2", 22));
-		UserService.add("test3", new User("test3", 19));
-		UserService.add("test4", new User("test4", 35));
+		UserService.add("admin", new User("admin", 27,3));
+		UserService.add("test1", new User("test1", 30, 2));
+		UserService.add("test2", new User("test2", 22, 1));
+		UserService.add("test3", new User("test3", 19, 2));
+		UserService.add("test4", new User("test4", 35, 0));
 	}
 	
 	public static Map<String, User> getUserMap() {
@@ -77,9 +81,11 @@ class UserService {
 class User {
 	private String id;
 	private int age;	
-	public User(String id, int age) {
+	private int level;
+	public User(String id, int age, int level) {
 		this.id = id;
 		this.age = age;
+		this.level = level;
 	}
 	public String getId() {
 		return id;
@@ -87,9 +93,12 @@ class User {
 	public int getAge() {
 		return age;
 	}
+	public int getLevel( ) {
+		return level;
+	}
 	@Override
 	public String toString() {
-		return "id=" + id + ", age=" + age;
+		return "id=" + id + ", age=" + age + ", level=" + level;
 	}
 }
 

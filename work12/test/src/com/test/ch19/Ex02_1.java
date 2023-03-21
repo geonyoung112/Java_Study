@@ -1,30 +1,79 @@
 package com.test.ch19;
 
+import java.util.HashMap;
+import java.util.Map;
 
 public class Ex02_1 {
 	public static void main(String[] args) {
+		Map<String, Car2> allCars = CarService.getcarMap();
+		Map<String, Car2> filteredCars = null;
 		
+		System.out.println("< 차량 출입 시간이 5시에서 9시 사이인 차량만 출력 >");
+		filteredCars = CarService.filter(allCars, c -> c.getTime() >5 && c.getTime() < 9);
+		CarService.printCars(filteredCars);
 	}
 }
 
 
+@FunctionalInterface
+interface CarFilter {
+    public abstract boolean test(Car2 car);
+}
 
-class User2 {
-	private String number;
+class CarService {
+	private static Map<String, Car2> carMap;
+	
+	static {
+		carMap = new HashMap<>();
+		CarService.add("가2356", new Car2("가2356", 6));
+		CarService.add("바5455", new Car2("바5455", 7));
+		CarService.add("사3355", new Car2("사3355", 5));
+		CarService.add("다7777", new Car2("다7777", 8));
+		CarService.add("바8888", new Car2("바8888", 3));
+	}
+	
+	public static Map<String, Car2> getcarMap() {
+		return carMap;
+	}
+	
+	public static void add(String id, Car2 car) {
+		carMap.put(id, car);
+	}
+	
+	public static Map<String, Car2> filter(Map<String, Car2>cars, CarFilter c) {
+		Map<String, Car2> filteredCars = new HashMap<>();
+		
+		for (Map.Entry<String, Car2> entry : cars.entrySet()) {
+			if (c.test(entry.getValue())) {
+				filteredCars.put(entry.getKey(), entry.getValue());
+			}
+		}
+		
+		return filteredCars;
+	}
+	
+	public static void printCars(Map<String, Car2> cars) {
+		for (Map.Entry<String, Car2> entry : cars.entrySet()) {
+			System.out.println(entry.getValue());
+		}
+	}
+}
+class Car2 {
+	private String id;
 	private int time;
-	public User2(String number, int time) {
-		this.number = number;
+	public Car2(String id, int time) {
+		this.id = id;
 		this.time = time;
 	}
-	public String getNumber() {
-		return number;
+	public String getId() {
+		return id;
 	}
 	public int getTime() {
 		return time;
 	}
 	@Override
 	public String toString() {
-		return "number=" + number + ", time=" + time;
+		return "Car[id=" + id + ", time=" + time + "]";
 	}	
 }
 /*

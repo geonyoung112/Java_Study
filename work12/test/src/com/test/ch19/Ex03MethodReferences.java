@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.IntFunction;
@@ -49,7 +50,15 @@ public class Ex03MethodReferences {
 		printItems2.accept(store);
 		System.out.println();
 		
+		//문제 2.
+		Consumer<String> cc = s -> store.test(s);
+		cc.accept("hi");
+		Store store7 = new Store();
+		Consumer<String> cc2 = store7::test;
+		cc2.accept("hello");
 		
+		BiConsumer<Store, String> cc3 = Store::test;
+		cc3.accept(store7, "nice");
 
 	}
 
@@ -73,6 +82,10 @@ class Store {
 		for(Item item : items) {
 			System.out.println("[title]" + item.getTitle());
 		}
+	}
+	
+	public void test(String str) {
+		System.out.println(str);
 	}
 	
 }

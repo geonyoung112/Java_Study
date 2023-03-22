@@ -20,6 +20,7 @@ public class Ex04_1 {
 				.limit(10);
 			intStream.forEach(System.out::println);
 			System.out.println();
+			
 		//문제 3. 
 		List<Car5> cars = new ArrayList<>();
 		cars.add(new Car5("기아", 1000));
@@ -42,25 +43,28 @@ public class Ex04_1 {
 		
 		//문제 5.
 		cars.stream()
-	       .mapToInt(Car5::getPrice)
+	       .map(Car5::getPrice)
 	       .limit(3)
 	       .forEach(System.out::println);
 		System.out.println();
 		
 		//문제 6.
-		cars.stream()
-	       .map(Car5::getName)
-	       .flatMapToInt(CharSequence::chars)
-	       .distinct()
-	       .sorted()
-	       .forEach(c -> System.out.print((char)c + " "));
-		System.out.println();
+	    cars.stream()
+	    	.flatMap(c -> c.getName().chars().mapToObj(ch -> (char)ch))
+	    	.distinct()
+	    	.sorted()
+	    	.forEach(System.out::println);
+	    	System.out.println();
+	    /*
+	     * hello.chars()
+	     *  .mapToObj(i -> (char)i)
+	     *  .forEach(System.out::println);
+	     */
 		
 		//문제 7.
 		cars.stream()
 	       .filter(car -> car.getName().equals("아우디"))
 	       .forEach(System.out::println);
-		
 	}
 
 }
@@ -83,7 +87,7 @@ class Car5 {
 	
 	@Override
 	public String toString() {
-		return "Car{" +"name=" + name + ", price=" + price + '}';
+		return "Car[" +"name=" + name + ", price=" + price + "]";
 	}
 }
 /*

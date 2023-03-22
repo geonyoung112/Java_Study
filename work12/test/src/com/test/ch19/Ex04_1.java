@@ -55,16 +55,13 @@ public class Ex04_1 {
 	    	.sorted()
 	    	.forEach(System.out::println);
 	    	System.out.println();
+
 	    /*
 	     * hello.chars()
 	     *  .mapToObj(i -> (char)i)
 	     *  .forEach(System.out::println);
 	     */
-	    	
-	    /*
-	     
-	     */
-		
+
 		//문제 7.
 		cars.stream()
 	       .filter(car -> car.getName().equals("아우디"))

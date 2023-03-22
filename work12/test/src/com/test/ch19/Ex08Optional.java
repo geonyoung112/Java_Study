@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class Ex08Optional {
 
@@ -75,13 +76,45 @@ public class Ex08Optional {
 		//System.out.println(opt5.orElse(new EBook("옵셔널", 30000, EBook.Category.LANG)));	// NullPointerException
 		System.out.println();
 		
+		System.out.println("< OptinalInt >");
+		OptionalInt optInt = 
+				ebooks
+						.stream()
+						.mapToInt(EBook::getPrice)
+						.max();
+		System.out.println(optInt.getAsInt());
+		System.out.println();
 		
-			
+		System.out.println("< flatMap, map >");
+		Panel p = new Panel();
+		p.setType("IPS");
+		Optional<Panel> panel = Optional.of(p);
 		
+		Screen s = new Screen();
+		s.setPanel(panel);
+		Optional<Screen> screen = Optional.of(s);
 		
+		Monitor monitor = new Monitor();
+		monitor.setScreen(screen);
 		
+		String panelType = 
+				Optional
+						.ofNullable(monitor)
+						.flatMap(Monitor::getScreen)
+						.flatMap(Screen::getPanel)
+						.map(Panel::getType)
+						.orElse("TN");
+		System.out.println(panelType);
+		System.out.println();
 		
-
+		System.out.println("< ifPresent >");
+		Optional<String> optPanelType = 
+				Optional
+				 		.ofNullable(monitor)
+				 		.flatMap(Monitor::getScreen)
+				 		.flatMap(Screen::getPanel)
+				 		.map(Panel::getType);
+		optPanelType.ifPresent(System.out::println);
 	}
 
 }

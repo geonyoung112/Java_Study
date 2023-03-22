@@ -43,7 +43,7 @@ public class Ex07ParallelStream {
 		ebooks
 				.stream()
 				.sorted()
-				.forEach(System.out::println);
+				.forEachOrdered(System.out::println);
 		System.out.println();
 		
 		System.out.println("< parallelStream sorted forEach (정렬 안됨) >");

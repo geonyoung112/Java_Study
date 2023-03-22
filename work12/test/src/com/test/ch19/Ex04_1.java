@@ -60,6 +60,10 @@ public class Ex04_1 {
 	     *  .mapToObj(i -> (char)i)
 	     *  .forEach(System.out::println);
 	     */
+	    	
+	    /*
+	     
+	     */
 		
 		//문제 7.
 		cars.stream()

@@ -46,7 +46,7 @@ public class Ex05_1 {
 		System.out.println(tax);
 		System.out.println();
 		
-		//문제 4._gpt, 다른방식으로 구현, 설명 
+		//문제 4.
 		 List<String> list1 = new ArrayList<>(Arrays.asList("아우디", "기아"));
 	     List<String> list2 = new ArrayList<>(Arrays.asList("현대", "도요타"));
 
@@ -55,9 +55,15 @@ public class Ex05_1 {
 
 	     System.out.println("List3: " + list3);
 	     
-	     //오류_후에 다시 
-	     /*List<String> tmpList = list1.stream()
-	 	     	.collect(() -> list2, (a, b) -> a.add(b), ArrayList::addAll);*/
+	     //문제 4번 다른 방식
+	     List<String> tmpList = list1.stream()
+	             .collect(Collectors.toCollection(() -> list2));
+	     System.out.println(tmpList);
+	    
+	     /*
+	     List<String> tmpList = list1.stream()
+	 	     	.collect(() -> list2, (a, b) -> a.add(b), ArrayList::addAll);
+	 	 */
 	     
 	     //System.out.println(tmpList);
 		

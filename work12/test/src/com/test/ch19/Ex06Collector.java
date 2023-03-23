@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-//gpt 설명 다시 물어보기
 
 public class Ex06Collector {
 

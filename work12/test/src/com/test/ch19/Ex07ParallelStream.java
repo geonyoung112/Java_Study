@@ -57,7 +57,7 @@ public class Ex07ParallelStream {
 		ebooks
 				.parallelStream()
 				.sorted()
-				.forEach(System.out::println);
+				.forEachOrdered(System.out::println);
 		System.out.println();
 
 	}

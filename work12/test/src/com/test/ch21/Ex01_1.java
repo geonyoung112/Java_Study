@@ -20,8 +20,13 @@ public class Ex01_1 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println();
 
 	}
 
 }
+
+/*
+문제 1.
+임의의 내용이 입력된 hello.txt파일을 생성하세요.
+hello.txt파일의 내용을 복사하는 코드를 작성하세요.
+*/

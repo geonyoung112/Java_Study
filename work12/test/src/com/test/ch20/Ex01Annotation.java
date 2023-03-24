@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+@Settings(version=1.1, author={"A", "B"})
 public class Ex01Annotation {
 
 	public static void main(String[] args) {

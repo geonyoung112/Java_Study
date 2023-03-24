@@ -14,7 +14,6 @@ import java.lang.annotation.Target;
  * @author rngooqw
  * @version 1.0
  * @since 2022. 11. 25
- * @return 입력받은 정수 값
  *
  */
 

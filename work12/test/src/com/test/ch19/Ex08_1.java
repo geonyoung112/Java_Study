@@ -7,40 +7,54 @@ public class Ex08_1 {
 	public static void main(String[] args) {
 		 Scanner scanner = new Scanner(System.in);
 
-	        System.out.print("자동차 모델을 입력하세요 : ");
-	        String model = scanner.nextLine();
+	     System.out.print("자동차 모델을 입력하세요 : ");
+	     String model = scanner.nextLine();
+	     
 
-	        System.out.print("자동차 가격을 입력하세요 : ");
-	        int priceStr = scanner.nextInt();
-	        
-	        Optional<Car> car = Optional.ofNullable(new Car(model, priceStr));
-	        System.out.println(car.orElse(new Car("미입력차량", 0)));
-	       
-	    }
+	     System.out.print("자동차 가격을 입력하세요 : ");
+	     int price = scanner.nextInt();
+		
+		
+	     //문제 1.
+	     Car car1 = null; 
+	     if (!model.equals("")) {
+	    	 car1 = new Car(model, price);
+	     }
+	     Optional<Car> c1 = Optional.ofNullable(car1);
+	     System.out.println(c1.orElse(new Car("미입력차량", 0)));
+		
+		
+	     //문제 2.
+	     int carPrice = c1.map(Car::getPrice).orElse(1);
+	     System.out.println("자동차 가격 : " + carPrice);
+        	
+	     scanner.close();    
 	}
+}
 
-	class Car {
-	    private String model;
-	    private int price;
 
-	    public Car(String model, int price) {
-	        this.model = model;
-	        this.price = price;
-	    }
+class Car {
+    private String model;
+    private int price;
 
-	    public String getModel() {
-	        return model;
-	    }
+    public Car(String model, int price) {
+        this.model = model;
+        this.price = price;
+    }
 
-	    public int getPrice() {
-	        return price;
-	    }
+    public String getModel() {
+        return model;
+    }
 
-	    @Override
-	    public String toString() {
-	        return "Car [model=" + model + ", price=" + price + "]";
-	    }
-	}
+    public int getPrice() {
+        return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Car [model=" + model + ", price=" + price + "]";
+    }
+}
 
 		
 /*

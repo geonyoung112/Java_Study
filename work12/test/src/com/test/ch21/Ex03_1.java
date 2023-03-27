@@ -2,14 +2,12 @@ package com.test.ch21;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +18,7 @@ public class Ex03_1 {
 	        
 	    // 주차장 인스턴스를 파일에 쓰기
 	    try (ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(
-	            new FileOutputStream("src/com/test/ch21/parking.txt")));
+	            new FileOutputStream("src/com/test/ch21/out4-objectoutputstream.txt")));
 	    ) {
 	    	Parking parking = new Parking();
 			parking.add("A");
@@ -34,7 +32,7 @@ public class Ex03_1 {
 
 	    // 주차장 인스턴스 파일 읽어오기
 	    try (ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(
-	    		new FileInputStream("src/com/test/ch21/parking.txt")));
+	    		new FileInputStream("src/com/test/ch21/out4-objectoutputstream.txt")));
 	    ) {
 	        Parking	parking2 = (Parking) in.readObject();
 	        System.out.println("주차장 인스턴스를 파일에서 읽어왔습니다.");

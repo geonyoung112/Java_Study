@@ -15,8 +15,10 @@ public class Ex02_1 {
 				BufferedWriter out = new BufferedWriter(new FileWriter("src/com/test/ch21/test3-bufferedwriter.txt"));
 			) {
 				String line;
+				int i=0;
 				while ((line = in.readLine()) != null) {
-					out.write(line);
+					i++;
+					out.write(i + ": " + line);
 					out.newLine();
 				}
 				System.out.println("< File Reader/Writer -> Buffered Reader/Writer >");

@@ -14,7 +14,7 @@ public class Ex04Files {
 		// TODO Auto-generated method stub
 		
 		String projectDir = System.getProperty("user.dir");
-		String packagePath = "src/com/test/java/ch21";
+		String packagePath = "src/com/test/ch21";
 		String fileName = "test2.txt";
 
 		Path p1 = Paths.get(projectDir).resolve(packagePath).resolve(fileName);

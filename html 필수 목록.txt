@@ -1,0 +1,67 @@
+//basic 
+
+//elements
+
+//attributes
+
+//headings
+
+//paragraphs
+
+//styles
+
+//formatting
+
+//quotation
+
+//comments
+
+//colors
+
+//css
+
+//links
+
+//images
+
+//tables
+
+//lists
+
+//block & inline
+
+//classes
+
+//id
+
+//file paths
+
+//head
+
+//layout
+
+//responsive
+
+//computercode
+
+//semantics
+
+//entities
+
+//charset
+
+​
+
+//HTML Forms
+
+//HTML Form Attributes
+
+//HTML Form Elements
+
+//HTML Input Types
+
+//HTML Input Attributes
+
+//HTML Input Form Attributes
+
+[출처] HTML5 레퍼런스|작성자 lcomputerstudy
